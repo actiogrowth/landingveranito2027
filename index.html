@@ -243,10 +243,18 @@ a[x-apple-data-detectors] { color: inherit !important; text-decoration: none !im
 .faq details p { margin: 0 0 16px; }
 
 .final { text-align: center; }
-.final blockquote { font-size: 18px; font-style: italic; color: var(--muted); max-width: 36em; margin: 0 auto 24px; }
+.final-quote { position: relative; max-width: 620px; margin: 26px auto var(--sp-content); padding: 44px 24px 26px; border-radius: var(--r); background: #14161A; color: #FFFFFF; box-shadow: 0 18px 40px rgba(61,42,0,.28); }
+.final-quote::before { content: '\201C'; position: absolute; top: -26px; left: 50%; width: 52px; height: 52px; margin-left: -26px; border-radius: 50%; background: #14161A; color: var(--orange); font-size: 46px; font-weight: 800; line-height: 64px; box-shadow: 0 0 0 5px var(--orange); }
+.final-quote-h { display: block; margin-bottom: 14px; font-size: 12.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--orange); }
+.final-quote blockquote { margin: 0; font-size: clamp(18px, 4.6vw, 22px); font-weight: 600; line-height: 1.5; color: #FFFFFF; text-wrap: pretty; }
+.final-quote figcaption { margin-top: 16px; font-size: 13px; color: rgba(255,255,255,.66); }
 .final h2 { font-size: clamp(34px, 6vw, 62px); letter-spacing: -.03em; }
 .final h2 em { font-style: normal; background: linear-gradient(transparent 66%, var(--mark) 66%); }
-.final .lead { max-width: 46ch; margin: var(--sp-title) auto var(--sp-content); }
+.final .lead { max-width: 30ch; margin: var(--sp-title) auto var(--sp-content); font-size: clamp(18px, 4.6vw, 21px); font-weight: 500; line-height: 1.5; color: var(--fg); }
+.final .lead b { font-weight: 800; }
+.final .btn { position: relative; width: 100%; max-width: 480px; min-height: 64px; padding: 16px 14px; border-radius: 16px; font-weight: 800; font-size: clamp(16px, 4.2vw, 19px); letter-spacing: -.01em; box-shadow: 0 0 0 5px rgba(20,22,26,.14), 0 16px 34px rgba(61,42,0,.34); animation: cta-breathe 3s ease-in-out infinite; }
+.final .btn::after { content: ''; position: absolute; inset: 0; border-radius: inherit; border: 2px solid #14161A; opacity: 0; pointer-events: none; animation: cta-ring 3s ease-out infinite; }
+.final .btn:hover { animation: none; }
 .final-meta { list-style: none; display: grid; justify-content: center; gap: 8px; margin-top: var(--sp-note); font-size: 13.5px; line-height: 1.5; color: var(--muted); text-align: left; }
 .final-meta li { display: flex; align-items: flex-start; gap: 8px; }
 .final-meta svg { margin-top: 2px; }
@@ -999,9 +1007,9 @@ a[x-apple-data-detectors] { color: inherit !important; text-decoration: none !im
 
 <section class="band final t-orange" id="cierre">
   <div class="wrap">
-    <blockquote>"Se puso sentimental en el carro porque se habia acabado y desde ya quiere volver, me dice que aprendio unos trucos nuevos"</blockquote>
+    <figure class="final-quote"><span class="final-quote-h">Esto nos escribieron al terminar la semana</span><blockquote>"Se puso sentimental en el carro porque se habia acabado y desde ya quiere volver, me dice que aprendio unos trucos nuevos"</blockquote><figcaption>WhatsApp de unos padres</figcaption></figure>
     <h2>Vas a conocer a <em>un niño distinto.</em></h2>
-    <p class="lead">Hay 50 cupos por semana, y el veranito pasado se vendieron todas. Elige hoy las semanas de tu hijo.</p>
+    <p class="lead">Cada semana tiene <b>50 cupos</b>, y el veranito pasado <b>se agotaron todas</b>. Asegura hoy las semanas de tu hijo.</p>
     <a class="btn" href="#reservar">Quiero asegurar sus semanas <svg width="20" height="20" aria-hidden="true"><use href="#vi-arrow"/></svg></a>
     <ul class="final-meta"><li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg>Si el primer día no le gusta, te devolvemos la semana</li><li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg>Grupos por edad</li><li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg>50 cupos por semana</li></ul>
   </div>
