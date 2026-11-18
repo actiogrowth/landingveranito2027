@@ -1,5 +1,10 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
-<title>Veranito VEA 2027</title>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Veranito VEA 2027 · Vida en Arte</title>
 <meta name="description" content="Un veranito puede tener a tu hijo entretenido. El Veranito VEA está armado para retarlo y le va a encantar. Parkour, telas, Calistenia Kids y juegos dirigidos para niños de 4 a 11 años en Costa del Este.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -375,14 +380,15 @@ h3 { font-size: 20px; font-weight: 700; letter-spacing: -.01em; line-height: 1.3
 @media (min-width: 980px) { .vea-summary { position: sticky; top: 16px; max-height: calc(100vh - 32px); overflow-y: auto; } }
 .vea-summary h2 { font-family: var(--font-d); font-weight: 800; font-size: 24px; margin-bottom: 4px; }
 .vea-summary-sub { font-size: 14px; color: var(--ink-3); margin-bottom: 14px; }
-.vea-empty { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px; padding: 22px 8px; color: var(--ink-3); font-size: 15px; border: 1.5px dashed var(--line); border-radius: var(--r-md); }
+.vea-empty { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px; padding: 16px 8px; color: var(--ink-3); font-size: 15px; border: 1.5px dashed var(--line); border-radius: var(--r-md); }
 .vea-empty svg { color: var(--orange); }
 .vea-sum-kid { margin-bottom: 14px; }
 .vea-sum-kid-h { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 6px; color: var(--ink); }
 .vea-sum-kid-h i { width: 10px; height: 10px; border-radius: 50%; background: var(--kc); }
-.vea-line { display: flex; justify-content: space-between; gap: 10px; font-size: 14px; padding: 6px 0; border-bottom: 1px solid #F1EEE8; }
+.vea-line { display: flex; justify-content: space-between; gap: 10px; font-size: 14px; padding: 5px 0; border-bottom: 1px solid #F1EEE8; }
 .vea-line > span:first-child { color: var(--ink-2); min-width: 0; }
 .vea-line > span:last-child { font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.vea-line s { margin-right: 6px; font-size: 12.5px; font-weight: 500; color: var(--ink-3); }
 .vea-tag { display: inline-block; font-size: 12px; font-weight: 600; padding: 1px 7px; border-radius: 999px; margin-left: 4px; }
 .vea-tag.b { background: var(--blue-50); color: var(--blue-700); }
 .vea-tag.p { background: var(--orange-50); color: var(--orange-700); }
@@ -390,7 +396,12 @@ h3 { font-size: 20px; font-weight: 700; letter-spacing: -.01em; line-height: 1.3
 .vea-line.sub > span { color: var(--ink); font-weight: 700; }
 .vea-line.save > span { color: var(--green); font-weight: 700; }
 
-.vea-coupon { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--line); }
+.vea-coupon { margin-top: 12px; padding-top: 4px; border-top: 1px solid var(--line); }
+.vea-coupon-toggle { display: flex; align-items: center; justify-content: space-between; width: 100%; min-height: 44px; font-size: 14px; font-weight: 600; color: var(--ink-2); text-align: left; }
+.vea-coupon-toggle::after { content: '+'; font-size: 18px; font-weight: 700; color: var(--ink); }
+.vea-coupon-toggle[aria-expanded="true"]::after { content: '-'; }
+#vea-coupon-box { padding-bottom: 4px; }
+.vea-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .vea-coupon label { display: block; font-size: 14px; font-weight: 700; margin-bottom: 8px; }
 .vea-coupon-row { display: flex; gap: 8px; }
 .vea-coupon input { flex: 1; min-width: 0; min-height: 48px; padding: 10px 14px; border: 1.5px solid var(--line); border-radius: 12px; font: inherit; font-size: 16px; text-transform: uppercase; background: var(--sand); outline: none; transition: border-color .2s, background .2s; }
@@ -404,7 +415,7 @@ h3 { font-size: 20px; font-weight: 700; letter-spacing: -.01em; line-height: 1.3
 .vea-coupon-msg.err { color: var(--red); }
 .vea-coupon-msg.wait { color: var(--ink-3); }
 
-.vea-total { display: flex; justify-content: space-between; align-items: baseline; margin-top: 16px; padding-top: 14px; border-top: 2px solid var(--ink); }
+.vea-total { display: flex; justify-content: space-between; align-items: baseline; margin-top: 4px; padding-top: 12px; border-top: 2px solid var(--ink); }
 .vea-total span { font-weight: 700; font-size: 16px; }
 .vea-total b { font-family: var(--font-d); font-weight: 800; font-size: 34px; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
 .vea-saved { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 10px; padding: 12px 14px; border-radius: 14px; background: var(--green-50); color: var(--green); font-weight: 700; }
@@ -554,10 +565,13 @@ h3 { font-size: 20px; font-weight: 700; letter-spacing: -.01em; line-height: 1.3
   .facts { margin-top: 64px; }
   .g4 { grid-template-columns: repeat(4, 1fr); }
   .day { grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
-  .vea .vea-summary { top: 20px; max-height: calc(100vh - 120px); }
+  .vea .vea-summary { top: var(--sum-top, 20px); max-height: none; overflow: visible; }
   .vea-bar { display: flex; }
 }
 </style>
+</head>
+<body>
+
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="vi-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
   <symbol id="vi-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
@@ -912,12 +926,15 @@ h3 { font-size: 20px; font-weight: 700; letter-spacing: -.01em; line-height: 1.3
             <div id="vea-summary-content"></div>
 
             <div class="vea-coupon">
-              <label for="vea-coupon-input">¿Tienes un código de descuento?</label>
+              <button type="button" class="vea-coupon-toggle" id="vea-coupon-toggle" aria-expanded="false" aria-controls="vea-coupon-box">¿Tienes un código de descuento?</button>
+              <div id="vea-coupon-box" hidden>
+              <label class="vea-sr" for="vea-coupon-input">Código de descuento</label>
               <div class="vea-coupon-row">
                 <input type="text" id="vea-coupon-input" placeholder="Ej: PREVENTAJOSE01" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-describedby="vea-coupon-msg">
                 <button type="button" class="vea-btn-dark" id="vea-coupon-btn">Aplicar</button>
               </div>
               <div id="vea-coupon-msg" class="vea-coupon-msg" role="status" aria-live="polite"></div>
+              </div>
             </div>
 
             <div class="vea-total"><span>Total</span><b id="vea-total">$0.00</b></div>
@@ -1207,14 +1224,15 @@ h3 { font-size: 20px; font-weight: 700; letter-spacing: -.01em; line-height: 1.3
         var ordered=getOrdered(h);
         if(!ordered.length) continue;
         var sub=0, subSin=0;
-        html+='<div class="vea-sum-kid" style="--kc:'+KID_COLORS[h]+'"><div class="vea-sum-kid-h"><i></i>Hijo '+(h+1)+'</div>';
+        var varios=numHijos>1;
+        html+='<div class="vea-sum-kid" style="--kc:'+KID_COLORS[h]+'">'+(varios?'<div class="vea-sum-kid-h"><i></i>Hijo '+(h+1)+'</div>':'');
         ordered.forEach(function(e,i){
           var w=weekByNum(Number(e[0])); var plan=e[1]; var price=getPrice(plan,i);
           sub+=price; subSin+=BASE[plan];
-          html+='<div class="vea-line"><span>Sem. '+w.num+' · '+w.label+' <span class="vea-tag '+(plan==='basic'?'b':'p')+'">'+PLAN_LABEL[plan]+'</span>'+(i>0?'<span class="vea-tag d">-$'+getDiscount(i)+'</span>':'')+'</span><span>$'+price+'</span></div>';
+          html+='<div class="vea-line"><span>'+w.label+' <span class="vea-tag '+(plan==='basic'?'b':'p')+'">'+PLAN_LABEL[plan]+'</span></span><span>'+(i>0?'<s>$'+BASE[plan]+'</s>':'')+'$'+price+'</span></div>';
         });
-        if(subSin-sub>0) html+='<div class="vea-line save"><span>Ahorro Hijo '+(h+1)+'</span><span>-$'+(subSin-sub)+'</span></div>';
-        html+='<div class="vea-line sub"><span>Subtotal Hijo '+(h+1)+'</span><span>$'+sub+'</span></div></div>';
+        if(varios) html+='<div class="vea-line sub"><span>Subtotal Hijo '+(h+1)+'</span><span>$'+sub+'</span></div>';
+        html+='</div>';
       }
       if(couponApplied){
         var lbl=couponTipo==='fijo'?'Desc. cupón (-$'+couponValor+')':'Desc. cupón ('+couponValor+'%)';
@@ -1230,7 +1248,20 @@ h3 { font-size: 20px; font-weight: 700; letter-spacing: -.01em; line-height: 1.3
     $('vea-cta-txt').textContent=t.nWeeks?'Pagar y asegurar mi cupo':'Elige tus semanas para continuar';
     renderScarcity();
     updateBar();
+    fitSummary();
   }
+  function fitSummary(){
+    var s=$('vea-summary');
+    if(innerWidth<980){ s.style.removeProperty('--sum-top'); return; }
+    s.style.setProperty('--sum-top',Math.min(20,innerHeight-s.offsetHeight-20)+'px');
+  }
+  window.addEventListener('resize',fitSummary);
+  $('vea-coupon-toggle').addEventListener('click',function(){
+    var box=$('vea-coupon-box'); var open=box.hidden;
+    box.hidden=!open; this.setAttribute('aria-expanded',open?'true':'false');
+    if(open) $('vea-coupon-input').focus();
+    fitSummary();
+  });
   function renderScarcity(){
     var low=[];
     for(var h=0;h<numHijos;h++){
@@ -1528,5 +1559,5 @@ h3 { font-size: 20px; font-weight: 700; letter-spacing: -.01em; line-height: 1.3
   loadWeeks();
 })();
 </script>
-
-</body></html>
+</body>
+</html>
