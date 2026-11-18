@@ -98,7 +98,8 @@ h3 { font-size: 20px; font-weight: 700; letter-spacing: -.01em; line-height: 1.3
 .hero h1 em { display: block; font-style: normal; color: var(--orange); }
 .hero h1 .mk { position: relative; display: inline-block; white-space: nowrap; }
 .mk-line { position: absolute; left: -2%; bottom: -.22em; width: 104%; height: .32em; overflow: visible; pointer-events: none; }
-.mk-line path { fill: none; stroke: #F1C873; stroke-width: 7; stroke-linecap: round; stroke-dasharray: 100; stroke-dashoffset: 100; animation: mk-draw .9s .5s cubic-bezier(.65,0,.35,1) forwards; }
+.mk-line path { fill: none; stroke: #F1C873; stroke-width: 7; stroke-linecap: round; stroke-dasharray: 100; stroke-dashoffset: 100; }
+.mk.draw .mk-line path { animation: mk-draw .9s .25s cubic-bezier(.65,0,.35,1) forwards; }
 @keyframes mk-draw { to { stroke-dashoffset: 0; } }
 @media (prefers-reduced-motion: reduce) { .mk-line path { stroke-dashoffset: 0; } }
 .hero-sub { font-size: clamp(17.5px, 4.6vw, 20px); font-weight: 500; line-height: 1.55; color: rgba(255,255,255,.9); max-width: 46ch; margin: var(--sp-title) auto 0; text-wrap: pretty; }
@@ -1438,8 +1439,11 @@ h3 { font-size: 20px; font-weight: 700; letter-spacing: -.01em; line-height: 1.3
       en.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); rv.unobserve(e.target); } });
     },{threshold:0.12});
     document.querySelectorAll('.rv').forEach(function(el){ rv.observe(el); });
+    var mk=document.querySelector('.hero h1 .mk');
+    new IntersectionObserver(function(en){ mk.classList.toggle('draw',en[0].isIntersecting); },{threshold:0.9}).observe(mk);
   } else {
     document.querySelectorAll('.rv').forEach(function(el){ el.classList.add('in'); });
+    document.querySelector('.hero h1 .mk').classList.add('draw');
     vis.hero=false;
     updateBar();
   }
