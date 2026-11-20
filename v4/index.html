@@ -699,8 +699,8 @@ h2 { font-size: clamp(40px, 6.2vw, 68px); }
 
 .hero h1 .mk2 { position: relative; display: inline-block; white-space: nowrap; padding: 0 .2em; z-index: 0; }
 .hero h1 .mk2::before { content: ''; position: absolute; inset: .07em 0 .05em; z-index: -1; background: #FFA615; transform: scaleX(0); transform-origin: left center; }
-.hero h1 .mk2.draw::before { animation: mk-wipe .7s .2s cubic-bezier(.65,0,.35,1) forwards; }
-.hero h1 .mk.draw::before { animation-delay: .8s; }
+.hero h1 .mk2.draw::before { animation: mk-wipe 1.2s .2s cubic-bezier(.65,0,.35,1) forwards; }
+.hero h1 .mk.draw::before { animation-duration: 1.2s; animation-delay: 1.3s; }
 @media (max-width: 759px) { .hero h1 .t3 { word-spacing: -.03em; } }
 @media (prefers-reduced-motion: reduce) { .hero h1 .mk2::before { transform: scaleX(1); } }
 
