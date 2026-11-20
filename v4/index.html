@@ -696,6 +696,32 @@ h2 { font-size: clamp(40px, 6.2vw, 68px); }
 .t-dark .quote::after, .final-quote::after { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M1 0V14L15 0Z' fill='%23fff'/%3E%3Cpath d='M1 0V14L15 0' fill='none' stroke='%23FFFFFF' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E"); }
 .final-quote { max-width: 480px; margin-top: 104px; }
 .final-quote-h { position: absolute; left: -8px; right: -8px; bottom: 100%; margin: 0 0 42px; text-align: center; color: #FFA615; }
+
+.pill-ok { gap: 7px; margin-inline: -10px; padding: 3px 12px 3px 3px; background: #FFFFFF; color: #14161A; font-size: clamp(10px, calc((100vw - 76px) / 27.4), 13.5px); }
+.t-white .pill-ok { border: 2px solid #14161A; box-shadow: 3px 3px 0 #14161A; }
+.pill-ok svg { flex-shrink: 0; width: 22px; height: 22px; padding: 2.5px; box-sizing: border-box; border-radius: 50%; background: #FFA615; border: 1.5px solid #14161A; color: #14161A; }
+@media (max-width: 339px) { .pill-ok { margin-inline: 0; padding-right: 14px; } }
+@media (min-width: 640px) { .pill-ok { gap: 9px; padding: 4px 16px 4px 4px; } .pill-ok svg { width: 26px; height: 26px; padding: 3.5px; } }
+
+.facts { grid-template-columns: 1fr; gap: 0; margin-top: 24px; background: #FFFFFF; border: 2px solid #14161A; border-radius: var(--r); box-shadow: var(--hard); overflow: hidden; }
+.fact { display: flex; align-items: center; gap: 14px; padding: 14px 16px; text-align: left; }
+.fact + .fact { border-top: 2px solid #14161A; }
+.fact-i { flex-shrink: 0; display: grid; place-items: center; width: 46px; height: 46px; background: #FFA615; color: #14161A; border: 2px solid #14161A; border-radius: 10px; box-shadow: 3px 3px 0 #14161A; }
+.fact .fact-i svg { margin: 0; color: inherit; }
+.fact-t { display: grid; gap: 1px; min-width: 0; font-size: 16px; font-weight: 700; line-height: 1.35; color: #14161A; text-wrap: balance; }
+.fact-t b { font-size: 11.5px; }
+.fact-t .fact-rows { justify-content: start; gap: 0 10px; }
+.fact-t .fact-rows i { text-align: left; font-size: 13px; font-weight: 600; }
+.fact-t .fact-rows span { font-size: 16px; }
+@media (min-width: 640px) {
+  .facts { grid-template-columns: repeat(2, 1fr); gap: 16px; background: none; border: 0; border-radius: 0; box-shadow: none; overflow: visible; }
+  .fact { flex-direction: column; gap: 14px; padding: 22px 12px 20px; text-align: center; background: #FFFFFF; border: 2px solid #14161A; border-radius: var(--r); box-shadow: var(--hard); }
+  .fact-t { justify-items: center; font-size: 15px; }
+  .fact-t .fact-rows { justify-content: center; }
+  .fact-t .fact-rows i { text-align: right; }
+  .fact-t .fact-rows span { font-size: 15px; }
+}
+@media (min-width: 900px) { .facts { grid-template-columns: repeat(4, 1fr); margin-top: 28px; } }
 </style>
 </head>
 <body>
@@ -748,10 +774,10 @@ h2 { font-size: clamp(40px, 6.2vw, 68px); }
       <div class="stat"><i class="stat-k">Cupos</i><b>50</b><span>cupos por semana</span></div>
     </div>
     <div class="facts grid g2c" aria-label="Lo básico">
-      <div class="fact"><svg width="24" height="24" aria-hidden="true"><use href="#vi-users"/></svg><b>Edades</b>De 4 a 11 años, en grupos por edad</div>
-      <div class="fact"><svg width="24" height="24" aria-hidden="true"><use href="#vi-clock"/></svg><b>Horario</b><span class="fact-rows"><i>Mañana</i><span>8:45 a 1:15</span><i>Completo</i><span>8:45 a 4:00</span></span></div>
-      <div class="fact"><svg width="24" height="24" aria-hidden="true"><use href="#vi-cal"/></svg><b>Fechas</b>Elige tus semanas<small class="fact-sub">Del 4 de enero al 26 de marzo</small></div>
-      <div class="fact"><svg width="24" height="24" aria-hidden="true"><use href="#vi-pin"/></svg><b>Lugar</b>Parque Industrial, Costa del Este</div>
+      <div class="fact"><span class="fact-i"><svg width="24" height="24" aria-hidden="true"><use href="#vi-users"/></svg></span><div class="fact-t"><b>Edades</b>De 4 a 11 años, en grupos por edad</div></div>
+      <div class="fact"><span class="fact-i"><svg width="24" height="24" aria-hidden="true"><use href="#vi-clock"/></svg></span><div class="fact-t"><b>Horario</b><span class="fact-rows"><i>Mañana</i><span>8:45 a 1:15</span><i>Completo</i><span>8:45 a 4:00</span></span></div></div>
+      <div class="fact"><span class="fact-i"><svg width="24" height="24" aria-hidden="true"><use href="#vi-cal"/></svg></span><div class="fact-t"><b>Fechas</b>Elige tus semanas<small class="fact-sub">Del 4 de enero al 26 de marzo</small></div></div>
+      <div class="fact"><span class="fact-i"><svg width="24" height="24" aria-hidden="true"><use href="#vi-pin"/></svg></span><div class="fact-t"><b>Lugar</b>Parque Industrial, Costa del Este</div></div>
     </div>
   </div>
 </header>
@@ -1553,7 +1579,7 @@ h2 { font-size: clamp(40px, 6.2vw, 68px); }
     bar.classList.toggle('is-cta',!t.nWeeks);
   }
   (function(){
-    var sel=['.stats','.facts > .fact',
+    var sel=['.stats','.facts',
       '.band .head > *','.manifesto > *','.subhead','.band .grid > *','.groups > .group','.ages','.age-out',
       '.day-pick','#day-tl','.day-full','.wide-photo','.note','.fine','.quote','.cta-mid',
       '.faq','.final .wrap > *'];
