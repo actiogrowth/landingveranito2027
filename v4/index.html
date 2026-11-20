@@ -676,6 +676,24 @@ h2 { font-size: clamp(40px, 6.2vw, 68px); }
 .stat-k { display: block; margin-bottom: 6px; font-style: normal; font-size: clamp(10.5px, 2.9vw, 12px); font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
 .fact-sub { display: block; font-size: 13.5px; font-weight: 500; color: var(--muted); }
 .day-chip { text-align: left; }
+
+.nav-in { justify-content: center; height: 150px; }
+.nav-logo span { width: 88px; height: 125px; }
+.nav-logo img { left: -26px; top: -15px; width: 132.8px; height: 166px; }
+@media (min-width: 980px) { .nav-in { height: 172px; } .nav-logo span { width: 104px; height: 148px; } .nav-logo img { left: -30.7px; top: -17.8px; width: 157px; height: 196.2px; } }
+
+.card.tcard, .quote, .final-quote { position: relative; display: block; background: #FFFFFF; color: #14161A; border: 2px solid #14161A; border-radius: 18px 18px 18px 4px; box-shadow: 5px 5px 0 #14161A; padding: 16px 18px 12px; text-align: left; }
+.quote { max-width: 440px; font-size: 17px; font-weight: 600; line-height: 1.5; }
+.card.tcard.solo { max-width: 440px; }
+.card.tcard blockquote, .final-quote blockquote { margin: 0; font-size: 17px; font-weight: 600; line-height: 1.5; color: #14161A; }
+.card.tcard::before, .quote::before, .final-quote::before { content: ''; position: absolute; left: 14px; top: auto; bottom: -14px; width: 0; height: 0; margin: 0; border: 7px solid transparent; border-top-color: #14161A; border-left-color: #14161A; border-radius: 0; background: none; box-shadow: none; font-size: 0; line-height: 0; }
+.card.tcard::after, .quote::after, .final-quote::after { content: ''; position: absolute; left: 16px; bottom: -9px; width: 0; height: 0; border: 4.5px solid transparent; border-top-color: #FFFFFF; border-left-color: #FFFFFF; }
+.card.tcard figcaption, .quote small, .final-quote figcaption { display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin-top: 8px; font-size: 12.5px; font-weight: 500; line-height: 1.4; color: #636B78; }
+.card.tcard figcaption::after, .quote small::after, .final-quote figcaption::after { content: ''; flex-shrink: 0; width: 19px; height: 11px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 21 12' fill='none' stroke='%231974A8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 6.5 4.5 10 11.5 2'/%3E%3Cpath d='M9 6.5 12.5 10 19.5 2'/%3E%3C/svg%3E") center / contain no-repeat; }
+.t-dark .quote, .final-quote { border-color: #FFFFFF; box-shadow: 5px 5px 0 #FFA615; }
+.t-dark .quote::before, .final-quote::before { border-top-color: #FFFFFF; border-left-color: #FFFFFF; }
+.final-quote { max-width: 480px; margin-top: 72px; }
+.final-quote-h { position: absolute; left: -8px; right: -8px; bottom: 100%; margin: 0 0 16px; text-align: center; color: #FFA615; }
 </style>
 </head>
 <body>
