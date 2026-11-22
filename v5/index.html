@@ -9,7 +9,7 @@
 <meta name="description" content="Un veranito puede tener a tu hijo entretenido. El Veranito VEA está armado para retarlo y le va a encantar. Parkour, telas, Calistenia Kids y juegos dirigidos para niños de 4 a 11 años en Costa del Este.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Bebas+Neue&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root {
   --black: #000000; --white: #FFFFFF;
@@ -730,24 +730,15 @@ h2 { font-size: clamp(40px, 6.2vw, 68px); }
 }
 @media (min-width: 900px) { .facts { grid-template-columns: repeat(4, 1fr); margin-top: 28px; } }
 
-/* ---- Fuentes ---- */
-:root { --disp: 'Bebas Neue', 'Poppins', system-ui, sans-serif; }
-html { font-synthesis: none; }
-h1, h2, .subhead, .station-name, .stat b, .group b, .plan h3, .manifesto blockquote, .hero h1 { font-weight: 400; letter-spacing: .012em; }
-.card.tcard::before, .quote::before, .final-quote::before { font-weight: 400; font-size: 88px; line-height: 96px; }
-.hero h1 { line-height: 1; font-size: calc((100vw - 40px) / 8.4); }
-@media (max-width: 759px) { .hero h1 .t4 { letter-spacing: .002em; } }
-@media (min-width: 760px) { .hero h1 { font-size: min(calc((100vw - 40px) / 12.2), 74px); } }
-h2 { font-size: clamp(40px, 10.4vw, 64px); line-height: .98; }
-.station-name { font-size: 40px; }
-@media (min-width: 980px) { .station-name { font-size: clamp(26px, 2.4vw, 32px); } }
-.stat b { font-size: clamp(34px, 9.2vw, 62px); line-height: 1; }
-.vea .vea-h2, .vea .vea-summary h2 { font-family: var(--disp); font-weight: 400; text-transform: uppercase; letter-spacing: .012em; line-height: 1; font-size: clamp(34px, 8.8vw, 44px); }
-.vea .vea-kidblock .vea-month-h h3 { font-family: var(--disp); font-weight: 400; text-transform: uppercase; font-size: 31px; line-height: 1; letter-spacing: .02em; padding-top: 2px; }
-.vea-kidhead b { font-family: var(--disp); font-weight: 400; text-transform: uppercase; font-size: 30px; line-height: 1; letter-spacing: .015em; padding-top: 2px; }
-.vea .vea-panel-title { font-family: var(--disp); font-weight: 400; text-transform: uppercase; font-size: 28px; line-height: 1; letter-spacing: .015em; }
-.vea .vea-total b { font-family: var(--disp); font-weight: 400; letter-spacing: .01em; }
-.vea-toast.is-deal i { font-family: var(--disp); font-weight: 400; font-size: 32px; letter-spacing: .01em; padding-top: 3px; }
+/* ---- Fuentes: Bebas Neue solo en la compra ---- */
+.vea, #reservar { --bebas: 'Bebas Neue', 'Barlow Condensed', 'Poppins', system-ui, sans-serif; }
+#reservar .head h2 { font-family: var(--bebas); font-weight: 400; letter-spacing: .012em; line-height: .98; font-size: clamp(40px, 10.4vw, 64px); }
+.vea .vea-h2, .vea .vea-summary h2 { font-family: var(--bebas); font-weight: 400; text-transform: uppercase; letter-spacing: .012em; line-height: 1; font-size: clamp(34px, 8.8vw, 44px); }
+.vea .vea-kidblock .vea-month-h h3 { font-family: var(--bebas); font-weight: 400; text-transform: uppercase; font-size: 31px; line-height: 1; letter-spacing: .02em; padding-top: 2px; }
+.vea-kidhead b { font-family: var(--bebas); font-weight: 400; text-transform: uppercase; font-size: 30px; line-height: 1; letter-spacing: .015em; padding-top: 2px; }
+.vea .vea-panel-title { font-family: var(--bebas); font-weight: 400; text-transform: uppercase; font-size: 28px; line-height: 1; letter-spacing: .015em; }
+.vea .vea-total b { font-family: var(--bebas); font-weight: 400; letter-spacing: .01em; }
+.vea-toast.is-deal i { font-family: var(--bebas); font-weight: 400; font-size: 32px; letter-spacing: .01em; padding-top: 3px; }
 @media (min-width: 640px) { .vea-toast.is-deal i { font-size: 36px; } }
 
 /* ---- Verdes: solo dos. Vivo (#25D366) en superficies; clarito (#D5F2E0) en fondos. El texto, en negro. ---- */
@@ -755,12 +746,12 @@ h2 { font-size: clamp(40px, 10.4vw, 64px); line-height: .98; }
 .vea .vea-next b { color: var(--ink); }
 .vea .vea-next svg { color: var(--ink); }
 .vea .vea-line.save > span { color: var(--ink); }
-.vea .vea-line.save > span:last-child { padding: 1px 8px; border-radius: 999px; background: var(--go); color: #FFFFFF; text-shadow: 0 1px 1px rgba(0,0,0,.3); }
+.vea .vea-line.save > span:last-child { padding: 1px 8px; border-radius: 999px; background: var(--go); color: #FFFFFF; text-shadow: var(--on-go); }
 .vea .vea-cupo.ok { background: var(--go-soft); color: var(--ink); }
 .vea .vea-coupon-msg.ok { color: var(--ink); }
 .vea .vea-modal p strong { color: var(--ink); }
 .vea-bar-save { color: #25D366; }
-.vea { --kid-1: #AED7EB; --kid-1-on: #14161A; --kid-2: #FFA615; --kid-2-on: #14161A; --kid-3: #1974AB; --kid-3-on: #fff; --kid-4: #FCCDCE; --kid-4-on: #14161A; --kid-5: #F1C873; --kid-5-on: #14161A; --go: #25D366; --go-d: #15873F; --go-soft: #D5F2E0; }
+.vea { --kid-1: #AED7EB; --kid-1-on: #14161A; --kid-2: #FFA615; --kid-2-on: #14161A; --kid-3: #1974AB; --kid-3-on: #fff; --kid-4: #FCCDCE; --kid-4-on: #14161A; --kid-5: #F1C873; --kid-5-on: #14161A; --go: #25D366; --go-d: #15873F; --go-soft: #D5F2E0; --on-go: 0 1px 1px rgba(6,78,36,.62), 0 0 2px rgba(6,78,36,.38); }
 .vea-h2 { scroll-margin-top: 20px; }
 
 .vea-toast { top: 22vh; bottom: auto; opacity: 0; pointer-events: none; transform: translate(-50%, -22px) scale(.96); align-items: center; gap: 14px; padding: 12px 18px 12px 12px; width: max-content; max-width: min(calc(100% - 24px), 480px); border-radius: 18px; font-size: 16.5px; line-height: 1.35; text-align: left; cursor: pointer; transition: transform .38s var(--ease), opacity .26s ease; }
@@ -775,8 +766,8 @@ h2 { font-size: clamp(40px, 10.4vw, 64px); line-height: .98; }
 .vea-how + .vea-kidblock.is-multi { margin-top: 0; }
 .vea-toast i { flex-shrink: 0; display: grid; place-items: center; min-width: 54px; height: 54px; padding: 0 8px; border-radius: 13px; background: rgba(255,255,255,.16); font-style: normal; font-weight: 800; font-size: 20px; letter-spacing: -.02em; white-space: nowrap; }
 .vea-toast.is-deal, .vea-toast.is-kids { background: #FFFFFF; color: var(--ink); border: 2px solid var(--ink); box-shadow: 0 20px 48px rgba(20,22,26,.34); }
-.vea-toast.is-deal i { background: var(--go); color: #FFFFFF; text-shadow: 0 1px 2px rgba(0,0,0,.28); }
-.vea-toast.is-deal b { color: var(--ink); font-weight: 600; white-space: nowrap; }
+.vea-toast.is-deal i { background: var(--go); color: #FFFFFF; text-shadow: var(--on-go); }
+.vea-toast.is-deal b { color: var(--go); font-weight: 800; font-size: 1.1em; letter-spacing: -.005em; white-space: nowrap; text-shadow: 0 .5px 0 rgba(11,110,52,.8), 0 1px 0 rgba(11,110,52,.4); }
 .vea-toast.is-deal span { font-weight: 500; }
 .vea-toast.is-kids { padding-right: 20px; }
 .vea-toast.is-kids i { background: var(--orange); color: var(--ink); }
@@ -791,6 +782,7 @@ h2 { font-size: clamp(40px, 10.4vw, 64px); line-height: .98; }
 .vea-next { display: flex; align-items: center; gap: 8px; margin-top: 10px; font-size: 14px; line-height: 1.4; color: var(--ink-2); }
 .vea-next[hidden] { display: none; }
 .vea-next svg { flex-shrink: 0; color: var(--ink); }
+.vea .vea-next .vea-tag.d { margin: 0 0 0 4px; }
 .vea-next b { color: var(--ink); font-weight: 600; }
 
 .vea-kidblock { scroll-margin-top: 16px; --kc-d: color-mix(in srgb, var(--kc) 68%, #14161A); }
@@ -826,18 +818,18 @@ h2 { font-size: clamp(40px, 10.4vw, 64px); line-height: .98; }
 .vea .vea-week.is-sel .vea-pbtn[aria-pressed="false"] s { font-size: 11.5px; margin-left: 3px; }
 .vea .vea-week.is-sel .vea-pbtn[aria-pressed="false"]::after { right: 8px; width: 16px; height: 16px; margin-top: -8px; }
 
-.vea .vea-tag.d { margin: 0 6px 0 0; padding: 1px 6px; background: var(--go); color: #FFFFFF; font-weight: 800; text-shadow: 0 1px 1px rgba(0,0,0,.3); }
+.vea .vea-tag.d { margin: 0 6px 0 0; padding: 1px 7px; font-size: 12.5px; background: var(--go); color: #FFFFFF; font-weight: 800; text-shadow: var(--on-go); }
 .vea .vea-line { gap: 6px; align-items: center; }
 .vea .vea-line > span:first-child { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 5px; min-width: 0; }
 .vea .vea-line > span:first-child .vea-tag { margin-left: 0; }
 .vea .vea-line > span:last-child { flex-shrink: 0; white-space: nowrap; }
 .vea-party { margin-right: 8px; font-size: 18px; }
-.vea .vea-summary:not(.is-empty) #vea-cta { background: var(--go); color: #FFFFFF; font-size: 19px; text-shadow: 0 1px 2px rgba(0,0,0,.28); box-shadow: 0 10px 24px rgba(37,211,102,.42); }
-.vea .vea-summary:not(.is-empty) #vea-cta svg { filter: drop-shadow(0 1px 1px rgba(0,0,0,.28)); }
+.vea .vea-summary:not(.is-empty) #vea-cta { background: var(--go); color: #FFFFFF; font-size: 19px; text-shadow: var(--on-go); box-shadow: 0 10px 24px rgba(37,211,102,.42); }
+.vea .vea-summary:not(.is-empty) #vea-cta svg { filter: drop-shadow(0 1px 1px rgba(6,78,36,.6)); }
 .vea .vea-summary:not(.is-empty) #vea-cta:hover { box-shadow: 0 14px 30px rgba(37,211,102,.52); }
 
 .vea .vea-week-top { margin-bottom: 14px; }
-.vea .vea-pbtn .vea-off { position: absolute; top: -14px; right: -8px; z-index: 2; padding: 3px 10px; border-radius: 999px; background: var(--go); color: #FFFFFF; text-shadow: 0 1px 1px rgba(0,0,0,.3); border: 2px solid #FFFFFF; box-shadow: 0 4px 12px rgba(20,22,26,.28); font-style: normal; font-size: 15.5px; font-weight: 800; line-height: 1.25; letter-spacing: -.01em; white-space: nowrap; }
+.vea .vea-pbtn .vea-off { position: absolute; top: -14px; right: -8px; z-index: 2; padding: 3px 10px; border-radius: 999px; background: var(--go); color: #FFFFFF; text-shadow: var(--on-go); border: 2px solid #FFFFFF; box-shadow: 0 4px 12px rgba(20,22,26,.28); font-style: normal; font-size: 15.5px; font-weight: 800; line-height: 1.25; letter-spacing: -.01em; white-space: nowrap; }
 .vea-pop .vea-off { animation: vea-off-in .45s var(--ease) both; }
 @keyframes vea-off-in { 0% { scale: .5; opacity: 0; } 60% { scale: 1.12; opacity: 1; } 100% { scale: 1; } }
 @media (prefers-reduced-motion: reduce) { .vea-pop .vea-off { animation: none; } }
@@ -1537,7 +1529,7 @@ h2 { font-size: clamp(40px, 10.4vw, 64px); line-height: .98; }
     $('vea-cta-txt').textContent=t.nWeeks?'Pagar y asegurar mi cupo':'Elige tus semanas para continuar';
     var an=getOrdered(activeHijo).length;
     $('vea-next').hidden=!(an&&hayMas(activeHijo));
-    $('vea-next').innerHTML=icon('vi-tag',16)+'<span>Próxima semana'+(numHijos>1?' del Hijo '+(activeHijo+1):'')+': <b>$'+getDiscount(an)+' de descuento</b></span>';
+    $('vea-next').innerHTML=icon('vi-tag',16)+'<span>Próxima semana'+(numHijos>1?' del Hijo '+(activeHijo+1):'')+': <span class="vea-tag d">-$'+getDiscount(an)+'</span></span>';
     renderScarcity();
     updateBar();
     fitSummary();
