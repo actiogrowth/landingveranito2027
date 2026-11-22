@@ -730,30 +730,50 @@ h2 { font-size: clamp(40px, 6.2vw, 68px); }
 }
 @media (min-width: 900px) { .facts { grid-template-columns: repeat(4, 1fr); margin-top: 28px; } }
 
+.vea { --kid-3: #14161A; --kid-3-on: #fff; --kid-4: #AED7EB; --kid-4-on: #111; --kid-5: #167C43; --kid-5-on: #fff; }
 .vea-h2 { scroll-margin-top: 20px; }
-.vea-tabs { scroll-margin-top: 16px; }
-.vea .vea-tabs { margin-bottom: var(--sp-item); }
-.vea-toast { align-items: center; gap: 12px; padding: 10px 16px 10px 10px; width: max-content; max-width: min(calc(100% - 24px), 440px); line-height: 1.35; text-align: left; }
-.vea-toast i { flex-shrink: 0; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 10px; background: rgba(255,255,255,.16); }
-.vea-toast.is-deal, .vea-toast.is-kids { background: #FFFFFF; color: var(--ink); border: 1.5px solid var(--ink); box-shadow: 0 14px 34px rgba(20,22,26,.26); font-size: 15.5px; }
+
+.vea-toast { top: max(14px, env(safe-area-inset-top, 0px)); bottom: auto; transform: translate(-50%, calc(-100% - 60px)); align-items: center; gap: 14px; padding: 12px 18px 12px 12px; width: max-content; max-width: min(calc(100% - 24px), 480px); border-radius: 18px; font-size: 16.5px; line-height: 1.35; text-align: left; cursor: pointer; transition: transform .4s var(--ease); }
+.vea-toast.show { transform: translate(-50%, 0); }
+.vea-toast i { flex-shrink: 0; display: grid; place-items: center; min-width: 54px; height: 54px; padding: 0 8px; border-radius: 13px; background: rgba(255,255,255,.16); font-style: normal; font-weight: 800; font-size: 20px; letter-spacing: -.02em; white-space: nowrap; }
+.vea-toast.is-deal, .vea-toast.is-kids { background: #FFFFFF; color: var(--ink); border: 2px solid var(--ink); box-shadow: 0 20px 48px rgba(20,22,26,.34); }
 .vea-toast.is-deal i { background: var(--green); color: #FFFFFF; }
 .vea-toast.is-deal b { color: var(--green); white-space: nowrap; }
+.vea-toast.is-kids { padding-right: 20px; }
 .vea-toast.is-kids i { background: var(--orange); color: var(--ink); }
-.vea-toast.bump { animation: vea-bump .32s var(--ease); }
-@keyframes vea-bump { 0% { scale: .95; } 60% { scale: 1.03; } 100% { scale: 1; } }
+.vea-toast.is-kids span { font-size: 15.5px; font-weight: 500; }
+.vea-toast.is-kids strong { display: block; margin-bottom: 2px; font-size: 17.5px; font-weight: 800; letter-spacing: -.01em; }
+.vea-toast.is-kids b { font-weight: 700; }
+.vea-toast.bump { animation: vea-bump .34s var(--ease); }
+@keyframes vea-bump { 0% { scale: .94; } 60% { scale: 1.04; } 100% { scale: 1; } }
 @media (prefers-reduced-motion: reduce) { .vea-toast.bump { animation: none; } }
+@media (min-width: 640px) { .vea-toast { top: 24px; font-size: 17.5px; } .vea-toast i { min-width: 60px; height: 60px; font-size: 22px; } }
 
 .vea-next { display: flex; align-items: center; gap: 8px; margin-top: 10px; font-size: 14px; line-height: 1.4; color: var(--ink-2); }
 .vea-next[hidden] { display: none; }
 .vea-next svg { flex-shrink: 0; color: var(--green); }
 .vea-next b { color: var(--green); }
 
-.vea-nextkid { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; min-height: 60px; margin-top: 24px; padding: 12px 16px; border-radius: 14px; border: 1.5px solid var(--ink); background: var(--ink); color: #FFFFFF; text-align: left; cursor: pointer; transition: transform .12s var(--ease); }
-.vea-nextkid span { font-size: 13.5px; font-weight: 500; opacity: .8; }
-.vea-nextkid b { display: inline-flex; align-items: center; gap: 8px; font-size: 16px; font-weight: 700; white-space: nowrap; }
-.vea-nextkid b::before { content: ''; width: 10px; height: 10px; border-radius: 50%; background: var(--kc); }
-.vea-nextkid:active { transform: scale(.98); }
-@media (max-width: 380px) { .vea-nextkid span { display: none; } .vea-nextkid { justify-content: center; } }
+.vea-kidblock { scroll-margin-top: 16px; }
+.vea-kidblock.is-multi { margin-top: 24px; padding: 14px 12px 12px; border: 2px solid var(--kc); border-radius: 20px; background: rgba(255,255,255,.55); }
+.vea .vea-kidblock.is-multi .vea-panel-tools { margin-bottom: 14px; }
+.vea-kidhead { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.vea-kidnum { flex-shrink: 0; display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: var(--kc); color: var(--kc-on); font-weight: 800; font-size: 17px; }
+.vea-kidhead b { font-family: var(--font-d); font-size: 22px; font-weight: 700; color: var(--ink); }
+.vea-kidhead small { font-size: 13.5px; font-weight: 600; color: var(--ink-3); }
+.vea .vea-kidblock.is-multi .vea-month-h { background: var(--kc); }
+.vea .vea-kidblock.is-multi .vea-month-h h3, .vea .vea-kidblock.is-multi .vea-month-h span { color: var(--kc-on); }
+.vea .vea-kidblock.is-multi .vea-month-h::after { background: var(--kc-on); opacity: .28; }
+.vea .vea-kidblock.is-multi .vea-month:last-child { margin-bottom: 0; }
+.vea-kidblock.has-error { border-color: var(--red); }
+.vea-kiderr { display: flex; align-items: center; gap: 8px; margin: 0 0 14px; padding: 10px 12px; border-radius: 12px; background: var(--red-50); color: var(--red); font-size: 14px; font-weight: 600; }
+@media (min-width: 640px) { .vea-kidblock.is-multi { padding: 18px; } }
+
+.vea .vea-week-top { margin-bottom: 14px; }
+.vea .vea-pbtn .vea-off { position: absolute; top: -14px; right: -8px; z-index: 2; padding: 3px 10px; border-radius: 999px; background: var(--green); color: #FFFFFF; border: 2px solid #FFFFFF; box-shadow: 0 4px 12px rgba(18,122,69,.38); font-style: normal; font-size: 15.5px; font-weight: 800; line-height: 1.25; letter-spacing: -.01em; white-space: nowrap; }
+.vea-pop .vea-off { animation: vea-off-in .45s var(--ease) both; }
+@keyframes vea-off-in { 0% { scale: .5; opacity: 0; } 60% { scale: 1.12; opacity: 1; } 100% { scale: 1; } }
+@media (prefers-reduced-motion: reduce) { .vea-pop .vea-off { animation: none; } }
 </style>
 </head>
 <body>
@@ -1096,7 +1116,7 @@ h2 { font-size: clamp(40px, 6.2vw, 68px); }
           <div>
             <div class="vea-tabs" id="vea-tabs" role="tablist" aria-label="Hijos"></div>
             <div id="vea-ladder"></div>
-            <div id="vea-hijos-container" role="tabpanel" aria-live="polite"></div>
+            <div id="vea-hijos-container"></div>
           </div>
 
           <aside class="vea-summary" id="vea-summary" aria-labelledby="vea-h-sum">
@@ -1274,12 +1294,12 @@ h2 { font-size: clamp(40px, 6.2vw, 68px); }
     renderKids();
     if(focus) $('vea-kids').querySelector('[data-kids="'+n+'"]').focus();
     renderAll();
-    if(n>1&&n!==antes) toast('Primero elige las semanas del <b>Hijo 1</b>. '+(n===2?'Después, las del <b>Hijo 2</b>.':'Después sigues con los demás, uno por uno.'),'kids');
+    if(n>1&&n!==antes) toast('<strong>Elige las semanas de cada hijo</strong>Empieza por el <b>Hijo 1</b>. Más abajo están las '+(n===2?'del <b>Hijo 2</b>.':(n===3?'del <b>Hijo 2</b> y las del <b>Hijo 3</b>.':'de los demás, en orden.')),'kids');
   }
 
   function renderTabs(){
     var tabs=$('vea-tabs');
-    if(numHijos<2){ tabs.innerHTML=''; tabs.style.display='none'; return; }
+    if(true){ tabs.innerHTML=''; tabs.style.display='none'; return; }
     tabs.style.display='';
     var html='';
     for(var h=0;h<numHijos;h++){
@@ -1294,7 +1314,7 @@ h2 { font-size: clamp(40px, 6.2vw, 68px); }
   }
   function setTab(h,focus){
     activeHijo=h;
-    renderTabs(); renderLadder(); renderPanel(); renderSummary();
+    renderTabs(); renderLadder(); renderPanel();
     if(focus) $('vea-tab-'+h).focus();
   }
 
@@ -1321,7 +1341,7 @@ h2 { font-size: clamp(40px, 6.2vw, 68px); }
     var orig=ord>0?'<s>$'+BASE[plan]+'</s>':'';
     return '<button type="button" class="vea-pbtn '+(plan==='basic'?'b':'p')+'" aria-pressed="'+on+'" data-h="'+h+'" data-w="'+w.num+'" data-plan="'+plan+'"'
       +' aria-label="Semana '+w.num+', plan '+(plan==='basic'?'mañana':'completo')+', $'+price+(on?', seleccionado':'')+'">'
-      +'<small>'+(on?icon('vi-check',12):'')+PLAN_LABEL[plan]+'</small><b>$'+price+orig+'</b></button>';
+      +'<small>'+(on?icon('vi-check',12):'')+PLAN_LABEL[plan]+'</small><b>$'+price+orig+'</b>'+(on&&idx>0?'<em class="vea-off" aria-hidden="true">-$'+getDiscount(idx)+'</em>':'')+'</button>';
   }
   function renderWeekCard(w,h){
     var ordered=getOrdered(h);
@@ -1329,7 +1349,7 @@ h2 { font-size: clamp(40px, 6.2vw, 68px); }
     var idx=ordered.findIndex(function(e){return Number(e[0])===w.num;});
     var cupo=cupoInfo(w,h);
     var cls='vea-week'+(selPlan?' is-sel is-'+selPlan:'');
-    var ribbon=(selPlan&&idx>0)?'<span class="vea-week-ribbon">-$'+getDiscount(idx)+'</span>':'';
+    var ribbon='';
     return '<article class="'+cls+'" data-week="'+w.num+'">'+ribbon
       +'<div class="vea-week-top"><span class="vea-week-n" aria-hidden="true">'+w.num+'</span>'
       +'<div class="vea-week-info"><h4>'+w.label+'</h4><p>Semana '+w.num+'</p></div>'
@@ -1349,16 +1369,18 @@ h2 { font-size: clamp(40px, 6.2vw, 68px); }
     var a=getOrdered(0), b=getOrdered(h);
     return a.length===b.length && a.every(function(e,i){return e[0]===b[i][0]&&e[1]===b[i][1];});
   }
-  function renderPanel(){
-    var container=$('vea-hijos-container');
-    if(!weeks.length) return;
-    var h=activeHijo;
-    container.setAttribute('aria-labelledby',numHijos>1?'vea-tab-'+h:'vea-h-weeks');
-    container.style.setProperty('--kc',KID_COLORS[h]);
-    var html='<div class="vea-panel-tools"><div class="vea-panel-title"><i></i>'+(numHijos>1?'Semanas del Hijo '+(h+1):'Semanas disponibles')+'</div>';
+  function renderKid(h){
+    var varios=numHijos>1;
+    var n=getOrdered(h).length;
+    var ayuda='<p class="vea-hint">En cada semana que quieras, toca <b>Mañana</b> (8:45 a 1:15) o <b>Completo</b> (8:45 a 4:00).</p>';
+    var html='<section class="vea-kidblock'+(varios?' is-multi':'')+(kidErrors[h]?' has-error':'')+'" id="vea-kid-'+h+'" data-kid="'+h+'" style="--kc:'+KID_COLORS[h]+';--kc-on:var(--kid-'+(h+1)+'-on)"'+(varios?' aria-label="Semanas del Hijo '+(h+1)+'"':'')+'>';
+    html+='<div class="vea-panel-tools">'+(varios
+      ?'<div class="vea-kidhead"><span class="vea-kidnum">'+(h+1)+'</span><b>Hijo '+(h+1)+'</b><small>'+(n?n+' semana'+(n>1?'s':''):'sin semanas')+'</small></div>'
+      :'<div class="vea-panel-title"><i></i>Semanas disponibles</div>');
     if(h>0 && getOrdered(0).length && !sameAsFirst(h)) html+='<button type="button" class="vea-ghost" data-copy="'+h+'">'+icon('vi-copy',16)+'Copiar semanas del Hijo 1</button>';
     html+='</div>';
-    html+='<p class="vea-hint">En cada semana que quieras, toca <b>Mañana</b> (8:45 a 1:15) o <b>Completo</b> (8:45 a 4:00).</p>';
+    if(!varios) html+=ayuda;
+    if(kidErrors[h]) html+='<p class="vea-kiderr">'+icon('vi-alert',16)+'Elige al menos una semana para el Hijo '+(h+1)+'.</p>';
     MESES.forEach(function(mes){
       var list=weeks.filter(function(w){return w.mes===mes;});
       if(!list.length) return;
@@ -1370,21 +1392,29 @@ h2 { font-size: clamp(40px, 6.2vw, 68px); }
         +(open.length?'<div class="vea-weeks">'+open.map(function(w){return renderWeekCard(w,h);}).join('')+'</div>':'')
         +chips(out,mes)+'</div>';
     });
-    if(numHijos>1 && h<numHijos-1 && getOrdered(h).length) html+='<button type="button" class="vea-nextkid" data-next="'+(h+1)+'" style="--kc:'+KID_COLORS[h+1]+'"><span>Listo con el Hijo '+(h+1)+'</span><b>Seguir con el Hijo '+(h+2)+icon('vi-arrow',18)+'</b></button>';
+    return html+'</section>';
+  }
+  function renderPanel(){
+    var container=$('vea-hijos-container');
+    if(!weeks.length) return;
+    var html='';
+    if(numHijos>1) html+='<p class="vea-hint">Cada hijo tiene su lista de semanas, una debajo de la otra. En cada semana que quieras, toca <b>Mañana</b> (8:45 a 1:15) o <b>Completo</b> (8:45 a 4:00).</p>';
+    for(var h=0;h<numHijos;h++) html+=renderKid(h);
     container.innerHTML=html;
   }
 
   function selectPlan(h,wNum,plan){
     var w=weekByNum(wNum); if(!w) return;
+    activeHijo=h;
     var cur=selections[h][wNum];
     if(!cur && libres(w,h)<=0) return;
     if(cur===plan) delete selections[h][wNum]; else selections[h][wNum]=plan;
     if(kidErrors[h] && getOrdered(h).length) delete kidErrors[h];
     renderAll();
     if(!cur && selections[h][wNum]) dealToast(h);
-    var card=$('vea-hijos-container').querySelector('[data-week="'+wNum+'"]');
+    var card=$('vea-hijos-container').querySelector('[data-kid="'+h+'"] [data-week="'+wNum+'"]');
     if(card && selections[h][wNum]) card.classList.add('vea-pop');
-    var btn=$('vea-hijos-container').querySelector('[data-w="'+wNum+'"][data-plan="'+plan+'"]');
+    var btn=$('vea-hijos-container').querySelector('[data-h="'+h+'"][data-w="'+wNum+'"][data-plan="'+plan+'"]');
     if(btn) btn.focus({preventScroll:true});
   }
   function copyFromFirst(h){
@@ -1520,7 +1550,7 @@ h2 { font-size: clamp(40px, 6.2vw, 68px); }
       showFormError(missingMsg(missing));
       activeHijo=missing[0];
       renderAll();
-      $('vea-h-weeks').scrollIntoView({behavior:'smooth',block:'start'});
+      ($('vea-kid-'+activeHijo)||$('vea-h-weeks')).scrollIntoView({behavior:'smooth',block:'start'});
       return;
     }
     showFormError('');
@@ -1543,7 +1573,7 @@ h2 { font-size: clamp(40px, 6.2vw, 68px); }
     if(skip){ skipPopup=true; go(); return; }
     for(var h=0;h<numHijos;h++){ if(getOrdered(h).length===1){ activeHijo=h; break; } }
     renderAll();
-    $('vea-h-weeks').scrollIntoView({behavior:'smooth',block:'start'});
+    ($('vea-kid-'+activeHijo)||$('vea-h-weeks')).scrollIntoView({behavior:'smooth',block:'start'});
     if(lastFocus && document.contains(lastFocus)) lastFocus.focus({preventScroll:true});
   }
 
@@ -1582,20 +1612,21 @@ h2 { font-size: clamp(40px, 6.2vw, 68px); }
   }
 
   var toastT;
-  function toast(text,kind){
+  function toast(text,kind,lead){
     var t=$('vea-toast');
     var on=t.classList.contains('show');
     t.className='vea-toast'+(kind?' is-'+kind:'')+(on?' show':'');
-    t.innerHTML='<i>'+icon(kind==='deal'?'vi-tag':(kind==='kids'?'vi-users':'vi-check'),18)+'</i><span>'+text+'</span>';
+    t.innerHTML='<i>'+(lead||icon(kind==='kids'?'vi-users':'vi-check',kind?26:20))+'</i><span>'+text+'</span>';
     void t.offsetWidth;
     t.classList.add('show'); if(on) t.classList.add('bump');
-    clearTimeout(toastT); toastT=setTimeout(function(){t.classList.remove('show');},kind?5000:3500);
+    clearTimeout(toastT); toastT=setTimeout(function(){t.classList.remove('show');},kind==='kids'?8000:(kind?5000:3500));
   }
   function hayMas(h){ return weeks.some(function(w){return !selections[h][w.num]&&libres(w,h)>0;}); }
   function dealToast(h){
     var who=numHijos>1?' del Hijo '+(h+1):'';
     if(!hayMas(h)){ toast('Ya elegiste todas las semanas'+who+'.'); return; }
-    toast('La próxima semana'+who+' te sale con <b>$'+getDiscount(getOrdered(h).length)+' de descuento</b>.','deal');
+    var d=getDiscount(getOrdered(h).length);
+    toast('La próxima semana'+who+' te sale con <b>$'+d+' de descuento</b>.','deal','-$'+d);
   }
 
   var vis={hero:true,reserva:false,summary:false,final:false,mid1:false,mid2:false};
@@ -1712,8 +1743,6 @@ h2 { font-size: clamp(40px, 6.2vw, 68px); }
     if(b){ selectPlan(Number(b.dataset.h),Number(b.dataset.w),b.dataset.plan); return; }
     var c=e.target.closest('[data-copy]');
     if(c){ copyFromFirst(Number(c.dataset.copy)); return; }
-    var nx=e.target.closest('[data-next]');
-    if(nx){ setTab(Number(nx.dataset.next)); $('vea-tabs').scrollIntoView({behavior:'smooth',block:'start'}); return; }
     if(e.target.closest('[data-retry]')) loadWeeks();
   });
   $('vea-coupon-btn').addEventListener('click',applyCoupon);
@@ -1805,6 +1834,7 @@ h2 { font-size: clamp(40px, 6.2vw, 68px); }
   }
 
   document.querySelectorAll('[data-precio]').forEach(function(el){ el.textContent='$'+BASE[el.dataset.precio]; });
+  $('vea-toast').addEventListener('click',function(){ this.classList.remove('show'); });
   renderKids();
   renderAll();
   loadWeeks();
