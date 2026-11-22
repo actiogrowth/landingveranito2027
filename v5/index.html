@@ -1316,8 +1316,9 @@ h2 { font-size: clamp(40px, 6.2vw, 68px); }
 
   function planBtn(w,h,plan,selPlan,idx){
     var on=selPlan===plan;
-    var price=on&&idx>=0?getPrice(plan,idx):BASE[plan];
-    var orig=on&&idx>0?'<s>$'+BASE[plan]+'</s>':'';
+    var ord=idx>=0?idx:getOrdered(h).length;
+    var price=getPrice(plan,ord);
+    var orig=ord>0?'<s>$'+BASE[plan]+'</s>':'';
     return '<button type="button" class="vea-pbtn '+(plan==='basic'?'b':'p')+'" aria-pressed="'+on+'" data-h="'+h+'" data-w="'+w.num+'" data-plan="'+plan+'"'
       +' aria-label="Semana '+w.num+', plan '+(plan==='basic'?'mañana':'completo')+', $'+price+(on?', seleccionado':'')+'">'
       +'<small>'+(on?icon('vi-check',12):'')+PLAN_LABEL[plan]+'</small><b>$'+price+orig+'</b></button>';
