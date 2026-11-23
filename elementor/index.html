@@ -831,7 +831,7 @@ body, #vea-lp { background: #FFFFFF; }
 #vea-lp .vea .vea-pbtn[aria-pressed="true"]::after { width: 24px; height: 24px; margin-top: -12px; border-color: var(--go); background-color: var(--go); background-size: 14px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FFFFFF' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E"); }
 #vea-lp .vea .vea-week.is-sel .vea-pbtn[aria-pressed="false"] { min-height: 54px; padding: 6px 30px 6px 10px; }
 #vea-lp .vea .vea-week.is-sel .vea-pbtn[aria-pressed="false"] b { font-size: 17px; }
-#vea-lp .vea .vea-week.is-sel .vea-pbtn[aria-pressed="false"] s { font-size: 11.5px; margin-left: 3px; }
+#vea-lp .vea .vea-week.is-sel .vea-pbtn[aria-pressed="false"] s { font-size: 12px; margin-left: 3px; }
 #vea-lp .vea .vea-week.is-sel .vea-pbtn[aria-pressed="false"]::after { right: 8px; width: 16px; height: 16px; margin-top: -8px; }
 
 #vea-lp .vea .vea-tag.d { margin: 0 6px 0 0; padding: 1px 7px; font-size: 12.5px; background: var(--go); color: #FFFFFF; font-weight: 800; text-shadow: var(--on-go); }
@@ -886,7 +886,6 @@ html, body { overflow-x: hidden; }
 /* Cierre en el azul de la marca y pie en un azul más oscuro (reunión 20 nov: el negro con naranja daba sensación de advertencia;
    Ricardo eligió azul el 23 nov). El azul es el opuesto del naranja, así el botón resalta más. Letra blanca (5.1:1 sobre #1974A8). */
 #vea-lp .t-azul { --bg: #1974A8; --fg: #FFFFFF; --muted: #FFFFFF; --accent: #FFFFFF; --rule: rgba(255,255,255,.3); --tint: #FFFFFF; --card-bg: #FFFFFF; --card-fg: #14161A; --card-muted: #444B57; --card-line: #E3E6EA; --card-edge: #14161A; --tile-bg: #FFA615; --tile-fg: #14161A; --sel-bg: #FFA615; --sel-fg: #14161A; --btn-bg: #FFA615; --btn-fg: #14161A; --mark: #FFA615; background: var(--bg); color: var(--fg); }
-#vea-lp .foot.t-azul { --bg: #0F4C70; --muted: rgba(255,255,255,.84); --rule: rgba(255,255,255,.2); }
 #vea-lp .t-azul .final-quote { border-color: #14161A; box-shadow: 9px 9px 0 #14161A; }
 #vea-lp .t-azul .final-quote::before { box-shadow: 4px 4px 0 #14161A; }
 #vea-lp .t-azul .final-quote::after { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M1 0V14L15 0Z' fill='%23fff'/%3E%3Cpath d='M1 0V14L15 0' fill='none' stroke='%2314161A' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E"); }
@@ -904,7 +903,10 @@ html, body { overflow-x: hidden; }
 @media (max-width: 439px) { #vea-lp .pill-ok { white-space: normal; font-size: 12.5px; line-height: 1.35; text-align: left; text-wrap: balance; border-radius: 18px; margin-inline: 0; padding: 5px 14px 5px 5px; width: fit-content; max-width: 18.4em; justify-self: center; } }
 #vea-lp .btn { text-wrap: balance; }
 #vea-lp .vea-modal-x { width: 46px; height: 46px; min-width: 46px; }
-@media (max-width: 759px) { #vea-lp .final h2 { font-size: min(52px, calc((100vw - 40px) / 7.5)); } #vea-lp .final h2 em { white-space: nowrap; } }
+@media (max-width: 359px) { #vea-lp .vea-bar { gap: 10px; } #vea-lp .vea-bar button { padding: 8px 12px; } #vea-lp .vea-bar button svg { display: none; } }
+@media (max-width: 759px) { #vea-lp .final h2 { font-size: min(40px, calc((100vw - 40px) / 7.5)); } #vea-lp .final h2 em { white-space: nowrap; } }
+/* Resaltado del cierre como franja, igual que en el título de arriba (no un bloque de toda la altura) */
+#vea-lp .final h2 em { background: linear-gradient(transparent .14em, #FFA615 .14em, #FFA615 calc(100% - .12em), transparent calc(100% - .12em)); color: #14161A; padding: 0 .16em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
 </style>
 <div id="vea-lp">
 
@@ -1332,7 +1334,7 @@ html, body { overflow-x: hidden; }
   </div>
 </section>
 
-<footer class="foot t-azul">
+<footer class="foot t-white">
   <p><b>VIDA EN ARTE, S.A.</b> · RUC 155679968-2-2019 DV 16<br>Parque Industrial Costa del Este, Calle Primera, Local 107, Parque Lefevre, Ciudad de Panamá, Panamá</p>
   <p><a href="mailto:admin@vidaenarte.com">admin@vidaenarte.com</a> · <a href="tel:+50761736585">+507 6173-6585</a> · Lunes a viernes, 8:00 a.m. – 7:00 p.m.</p>
   <p class="foot-pay">Pagos seguros con BAC (3D Secure) · Aceptamos Visa, Mastercard y American Express · Precios en dólares (USD)<!-- LOGOS_TARJETAS: aquí van las imágenes oficiales de los logos que entrega BAC --></p>
@@ -1509,8 +1511,8 @@ html, body { overflow-x: hidden; }
     if(cur===plan) delete selections[h][wNum]; else selections[h][wNum]=plan;
     if(kidErrors[h] && getOrdered(h).length) delete kidErrors[h];
     renderAll();
-    if(!cur && selections[h][wNum]) dealToast(h);
     var card=$('vea-hijos-container').querySelector('[data-kid="'+h+'"] [data-week="'+wNum+'"]');
+    if(!cur && selections[h][wNum]) dealToast(h,card);
     if(card && selections[h][wNum]) card.classList.add('vea-pop');
     var btn=$('vea-hijos-container').querySelector('[data-h="'+h+'"][data-w="'+wNum+'"][data-plan="'+plan+'"]');
     if(btn) btn.focus({preventScroll:true});
@@ -1711,21 +1713,42 @@ html, body { overflow-x: hidden; }
   }
 
   var toastT;
-  function toast(text,kind,lead){
+  // Ubica el aviso para que nunca tape lo que el padre acaba de elegir:
+  // se queda en su altura de siempre si no choca; si choca, va debajo de la semana, y si abajo no cabe, encima.
+  function placeToast(t,anchor){
+    t.style.top='';
+    if(!anchor) return;
+    // Tamaño real de la tarjeta, sin la animación de "pop" (que la achica un instante)
+    var r=anchor.getBoundingClientRect(), mid=(r.top+r.bottom)/2, ah=anchor.offsetHeight;
+    var a={top:mid-ah/2, bottom:mid+ah/2}, H=window.innerHeight, th=t.offsetHeight, gap=14;
+    var bar=$('vea-bar'), barTop=H;
+    if(bar && !bar.classList.contains('is-hidden')){ var br=bar.getBoundingClientRect(); if(br.height && br.top<H) barTop=br.top; }
+    var minTop=12, maxBottom=barTop-gap;
+    var top=Math.round(H*0.22);
+    var choca=function(y){ return y < a.bottom+gap && y+th > a.top-gap; };
+    if(!choca(top)) return;
+    var abajo=a.bottom+gap, arriba=a.top-gap-th;
+    if(abajo+th<=maxBottom) top=abajo;
+    else if(arriba>=minTop) top=arriba;
+    else top=(maxBottom-a.bottom > a.top-minTop) ? Math.min(abajo, maxBottom-th) : Math.max(arriba, minTop);
+    t.style.top=Math.round(top)+'px';
+  }
+  function toast(text,kind,lead,anchor){
     var t=$('vea-toast');
     var on=t.classList.contains('show');
     t.className='vea-toast'+(kind?' is-'+kind:'')+(on?' show':'');
     t.innerHTML='<i>'+(lead||icon(kind==='kids'?'vi-users':'vi-check',kind?26:20))+'</i><span>'+text+'</span>';
+    placeToast(t,anchor);
     void t.offsetWidth;
     t.classList.add('show'); if(on) t.classList.add('bump');
     clearTimeout(toastT); toastT=setTimeout(function(){t.classList.remove('show');},kind==='kids'?8000:(kind?5000:3500));
   }
   function hayMas(h){ return weeks.some(function(w){return !selections[h][w.num]&&libres(w,h)>0;}); }
-  function dealToast(h){
+  function dealToast(h,anchor){
     var who=numHijos>1?' del Hijo '+(h+1):'';
-    if(!hayMas(h)){ toast('Ya elegiste todas las semanas'+who+'.'); return; }
+    if(!hayMas(h)){ toast('Ya elegiste todas las semanas'+who+'.',null,null,anchor); return; }
     var d=getDiscount(getOrdered(h).length);
-    toast('La próxima semana'+who+' te sale con <b>$'+d+' de descuento</b>.','deal','-$'+d);
+    toast('La próxima semana'+who+' te sale con <b>$'+d+' de descuento</b>.','deal','-$'+d,anchor);
   }
 
   var vis={hero:true,reserva:false,summary:false,final:false,mid1:false,mid2:false};
