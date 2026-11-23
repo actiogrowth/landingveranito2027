@@ -903,6 +903,25 @@ html, body { overflow-x: hidden; }
 @media (max-width: 439px) { #vea-lp .pill-ok { white-space: normal; font-size: 12.5px; line-height: 1.35; text-align: left; text-wrap: balance; border-radius: 18px; margin-inline: 0; padding: 5px 14px 5px 5px; width: fit-content; max-width: 18.4em; justify-self: center; } }
 #vea-lp .btn { text-wrap: balance; }
 #vea-lp .vea-modal-x { width: 46px; height: 46px; min-width: 46px; }
+/* Un día en Veranito: la barra de la edad se lee (negro y más peso) y la tarde va en su propio cuadro, igual al de la mañana */
+#vea-lp .day-pick { font-size: 16px; font-weight: 700; line-height: 1.4; color: #14161A; }
+#vea-lp .day-pick a { font-size: 15px; font-weight: 700; color: #14161A; text-decoration: underline; text-underline-offset: 3px; }
+#vea-lp .day-pm { margin-top: var(--sp-item); padding: 20px 24px 8px; }
+#vea-lp .day-pm h3 { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; padding-bottom: 12px; border-bottom: 2px solid #14161A; font-size: 19px; font-weight: 800; letter-spacing: -.01em; line-height: 1.2; color: #14161A; }
+#vea-lp .day-pm-tag { font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; line-height: 1.3; padding: 4px 10px; border-radius: 999px; background: #1974A8; color: #FFFFFF; }
+#vea-lp .day-pm .timeline { padding: 0; }
+/* Computadora: izquierda = edad, mañana y nota; derecha = tarde y fotos. Celular: edad, mañana, tarde, fotos y nota, en ese orden. */
+#vea-lp .day .gallery { margin-top: 16px; }
+#vea-lp .day .day-pm { margin-top: 0; }
+@media (max-width: 979px) {
+  #vea-lp .day { gap: 16px; }
+  #vea-lp .day > div { display: contents; }
+  #vea-lp .day .day-pick { order: 1; margin-bottom: 0; }
+  #vea-lp .day #day-tl { order: 2; }
+  #vea-lp .day .day-pm { order: 3; }
+  #vea-lp .day .gallery { order: 4; margin-top: 8px; }
+  #vea-lp .day .note { order: 5; margin-top: 8px; }
+}
 @media (max-width: 359px) { #vea-lp .vea-bar { gap: 10px; } #vea-lp .vea-bar button { padding: 8px 12px; } #vea-lp .vea-bar button svg { display: none; } }
 @media (max-width: 759px) { #vea-lp .final h2 { font-size: min(40px, calc((100vw - 40px) / 7.5)); } #vea-lp .final h2 em { white-space: nowrap; } }
 /* Resaltado del cierre como franja, igual que en el título de arriba (no un bloque de toda la altura) */
@@ -1070,7 +1089,7 @@ html, body { overflow-x: hidden; }
     </div>
     <div class="day">
       <div>
-        <p class="day-pick" id="day-pick">Elige su edad arriba y aquí ves su día, reto por reto.</p>
+        <p class="day-pick" id="day-pick">Elige su edad arriba y aquí ves su día, reto por reto.<a href="#grupos">Elegir edad</a></p>
         <ol class="card timeline" id="day-tl">
           <li><time>8:45</time><div><b>Llega y calienta con su grupo</b></div></li>
           <li><time>9:00</time><div class="tl-rot" data-rot="0"><b>Reto 1</b></div></li>
@@ -1081,20 +1100,24 @@ html, body { overflow-x: hidden; }
           <li><time>1:00</time><div><b>Estiramiento final</b></div></li>
           <li><time>1:15</time><div><b>Sale</b><small>Plan mañana</small></div></li>
         </ol>
-        <details class="day-full">
-          <summary>¿Y si se queda con ganas de más? El plan completo</summary>
-          <p>Almuerza a la 1:15. A la 1:45 sigue avanzando en parkour, Calistenia Kids y telas. A las 3:45 estira, y a las 4:00 sale.</p>
-        </details>
+        <ul class="note checks"><li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg>En cada reto cambia de estación.</li><li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg>Y tú, desde el trabajo, recibes sus fotos durante la semana.</li></ul>
       </div>
       <div>
+        <div class="card day-pm">
+          <h3><span class="day-pm-tag">Plan completo</span>Y sigue la tarde</h3>
+          <ol class="timeline">
+            <li><time>1:15</time><div><b>Almuerza</b><small>El que trae de casa</small></div></li>
+            <li><time>1:45</time><div><b>Sigue avanzando</b><small>Parkour, Calistenia Kids y telas</small></div></li>
+            <li><time>3:45</time><div><b>Estiramiento final</b></div></li>
+            <li><time>4:00</time><div><b>Sale</b><small>Plan completo</small></div></li>
+          </ol>
+        </div>
         <div class="gallery grid g2c">
-          <img class="rv" loading="lazy" decoding="async" src="https://files.leadconnectorhq.com/file/6b047b7aca280c4de3c6dc3e/room-1.jpg" alt="El gimnasio de Vida en Arte visto desde el piso: telas, estructuras de parkour y bloques de espuma" width="1280" height="960">
           <img class="gal-sm rv" loading="lazy" decoding="async" src="https://files.leadconnectorhq.com/file/6b047d1bca280c4de3c71f1b/493315166-1785360932368259-4233881924652743828-n.jpg" alt="Un día en Veranito (1 de 4)">
           <img class="gal-sm rv" loading="lazy" decoding="async" src="https://files.leadconnectorhq.com/file/6b047d1bd45fc20d7751deed/493024126-1786090778961941-4208273583571197005-n.jpg" alt="Un día en Veranito (2 de 4)">
           <img class="gal-sm rv" loading="lazy" decoding="async" src="https://files.leadconnectorhq.com/file/6b047d1ce83b600a233f8472/488926562-1766964084207944-8902305119583286775-n.jpg" alt="Un día en Veranito (3 de 4)">
           <img class="gal-sm rv" loading="lazy" decoding="async" src="https://files.leadconnectorhq.com/file/6b047d1bca280c4de3c71f21/505871515-1824458488458503-8103663859100347217-n.jpg" alt="Un día en Veranito (4 de 4)">
         </div>
-        <ul class="note checks"><li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg>En cada reto cambia de estación.</li><li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg>Y tú, desde el trabajo, recibes sus fotos durante la semana.</li></ul>
       </div>
     </div>
     <p class="cta-mid"><a class="btn mid" href="#reservar">Quiero este día para mi hijo <svg width="20" height="20" aria-hidden="true"><use href="#vi-down"/></svg></a></p>
@@ -1107,7 +1130,6 @@ html, body { overflow-x: hidden; }
       <span class="kicker">Seguridad primero</span>
       <h2>Telas, alturas y saltos. Esto es lo que hay abajo.</h2>
     </div>
-    <img class="wide-photo rv" loading="lazy" decoding="async" src="https://files.leadconnectorhq.com/file/6b047df1655b1c781390cb8e/descarga.jpg" alt="Las telas del gimnasio con colchonetas debajo de cada una" width="1280" height="960">
     <div class="grid g3">
       <div class="card safe rv"><span class="tile"><svg width="22" height="22" aria-hidden="true"><use href="#vi-shield"/></svg></span><h3>Equipamiento profesional de danza aérea</h3><p>Telas, sistemas de suspensión y accesorios técnicos especializados, diseñados para una práctica segura y sometidos a revisiones técnicas periódicas.</p></div>
       <div class="card safe rv"><span class="tile"><svg width="22" height="22" aria-hidden="true"><use href="#vi-layers"/></svg></span><h3>Colchonetas de alta densidad</h3><p>Ubicadas estratégicamente en las zonas de saltos, estructuras y debajo de las telas para mayor protección.</p></div>
@@ -1137,8 +1159,8 @@ html, body { overflow-x: hidden; }
 <section class="band t-cel" id="para-quien">
   <div class="wrap">
     <div class="head">
-      <span class="kicker">¿Es para tu hijo?</span>
-      <h2>Preferimos decírtelo ahora, y no el primer día.</h2>
+      <span class="kicker">Para quién es</span>
+      <h2>¿Es para mi hijo?</h2>
     </div>
     <div class="grid g3">
       <div class="card fit rv">
@@ -1166,7 +1188,6 @@ html, body { overflow-x: hidden; }
         </ul>
       </div>
     </div>
-    <p class="note ask"><b>¿Todavía con dudas?</b><span><a href="https://api.whatsapp.com/send/?phone=50762752521&amp;text=Hola%2C+quiero+informaci%C3%B3n+de+el+Veranito+VEA+%F0%9F%8E%89&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener">Cuéntanos de tu hijo por WhatsApp</a> y te decimos con honestidad si es para él.</span></p>
   </div>
 </section>
 
@@ -1774,7 +1795,7 @@ html, body { overflow-x: hidden; }
   (function(){
     var sel=['.stats','.facts',
       '.band .head > *','.manifesto > *','.subhead','.band .grid > *','.groups > .group','.ages','.age-out',
-      '.day-pick','#day-tl','.day-full','.wide-photo','.note','.fine','.quote','.cta-mid',
+      '.day-pick','#day-tl','.day-full','.day-pm','.wide-photo','.note','.fine','.quote','.cta-mid',
       '.faq','.final .wrap > *'];
     var seen=[];
     document.querySelectorAll(sel.join(',')).forEach(function(el){
