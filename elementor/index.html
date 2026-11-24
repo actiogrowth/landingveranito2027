@@ -961,6 +961,21 @@ html, body { overflow-x: hidden; }
 #vea-lp #para-quien .fit li::before { top: 21px; }
 #vea-lp #para-quien .fit li:first-child::before { top: 11px; }
 #vea-lp #para-quien .fit li b { font-weight: 700; color: #14161A; }
+/* Planes: cifra de retos destacada, idea de cada punto en negrita y "Lleva" al pie para que las dos tarjetas terminen igual */
+#vea-lp #planes .plan { display: flex; flex-direction: column; }
+#vea-lp #planes .plan .badge { align-self: flex-start; }
+#vea-lp .plan-stat { display: flex; align-items: center; gap: 14px; margin-top: 16px; padding: 12px 16px; border-radius: 12px; background: #EEF1F4; border: 2px solid #14161A; color: #14161A; }
+#vea-lp .plan-stat.is-full { background: #AED7EB; }
+#vea-lp .plan-stat b { font-family: var(--disp); font-weight: 800; font-size: 52px; line-height: .9; color: #14161A; font-variant-numeric: tabular-nums; }
+#vea-lp .plan-stat span { display: grid; gap: 3px; font-size: 14.5px; font-weight: 500; line-height: 1.35; color: #14161A; }
+#vea-lp .plan-stat strong { font-size: 16px; font-weight: 800; }
+#vea-lp .plan-stat em { font-style: normal; font-weight: 800; white-space: nowrap; }
+#vea-lp #planes .plan li { color: #444B57; line-height: 1.5; }
+#vea-lp #planes .plan li svg { flex-shrink: 0; color: #1974A8; stroke-width: 3; }
+#vea-lp #planes .plan li b { font-weight: 700; color: #14161A; }
+#vea-lp #planes .plan-lleva { margin-top: auto; font-weight: 500; color: #444B57; }
+#vea-lp #planes .plan-lleva b { font-weight: 800; color: #14161A; }
+#vea-lp #planes .plan ul:last-of-type { margin-bottom: 24px; }
 /* Notas con checks (grupos y día): letra negra y más gruesa, check en círculo azul de la marca */
 #vea-lp .note.checks { gap: 14px; padding: 18px 20px; }
 #vea-lp .note.checks li { align-items: flex-start; gap: 12px; font-size: 16px; font-weight: 600; line-height: 1.4; color: #14161A; }
@@ -1147,9 +1162,9 @@ html, body { overflow-x: hidden; }
           <h3><span class="day-tag is-pm">Solo plan completo</span><span class="day-ttl">La tarde <span class="day-hora"><svg width="16" height="16" aria-hidden="true"><use href="#vi-clock"/></svg>1:15 a 4:00</span></span></h3>
           <ol class="timeline">
             <li><time>1:15</time><div><b>Almuerza</b><small>El que trae de casa</small></div></li>
-            <li><time>1:45</time><div><b>Rotación 1</b><small>Parkour, Calistenia Kids o telas</small></div></li>
-            <li><time>2:25</time><div><b>Rotación 2</b><small>Cambia de estación</small></div></li>
-            <li><time>3:05</time><div><b>Rotación 3</b><small>La estación que le falta</small></div></li>
+            <li><time>1:45</time><div><b>Reto 5</b><small>Parkour, Calistenia Kids o telas</small></div></li>
+            <li><time>2:25</time><div><b>Reto 6</b><small>Cambia de estación</small></div></li>
+            <li><time>3:05</time><div><b>Reto 7</b><small>La estación que le falta</small></div></li>
             <li><time>3:45</time><div><b>Estiramiento final</b></div></li>
             <li><time>4:00</time><div><b>Sale</b><small>Plan completo</small></div></li>
           </ol>
@@ -1245,50 +1260,52 @@ html, body { overflow-x: hidden; }
         <h3>Plan mañana</h3>
         <p class="plan-time">De lunes a viernes, de 8:45 a 1:15</p>
         <p class="plan-price"><b>$185</b><span>por semana</span></p>
+        <p class="plan-stat"><b>20</b><span><strong>retos por semana</strong>4 cada mañana</span></p>
         <p class="plan-g">La mañana</p>
         <ul>
-          <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg>Llega a las 8:45 y calienta con su grupo</li>
-          <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg>Cuatro retos, uno en cada estación: Jump Kids (parkour) dos veces y nunca seguidas, Fly Kids (telas) con Calistenia Kids, y Power Kids (juegos dirigidos)</li>
-          <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg>Merienda a media mañana</li>
-          <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg>Estiramiento final a la 1:00, y sale a la 1:15</li>
+          <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg><span><b>Llega a las 8:45</b> y calienta con su grupo</span></li>
+          <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg><span><b>Cuatro retos, uno en cada estación:</b> Jump Kids (parkour) dos veces y nunca seguidas, Fly Kids (telas) con Calistenia Kids, y Power Kids (juegos dirigidos)</span></li>
+          <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg><span><b>Merienda</b> a media mañana</span></li>
+          <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg><span><b>Estiramiento final a la 1:00,</b> y sale a la 1:15</span></li>
         </ul>
         <p class="plan-g">Toda la semana</p>
         <ul>
-          <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg>20 retos, 10 de ellos de parkour</li>
-          <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg>Su grupo, con niños de su edad</li>
-          <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg>Profesores de parkour y de telas</li>
-          <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg>Recibes sus fotos durante la semana</li>
-          <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg>Si el primer día no le gusta, te devolvemos la semana</li>
+          <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg><span><b>20 retos,</b> 10 de ellos de parkour</span></li>
+          <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg><span><b>Su grupo,</b> con niños de su edad</span></li>
+          <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg><span><b>Profesores</b> de parkour y de telas</span></li>
+          <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg><span><b>Recibes sus fotos</b> durante la semana</span></li>
+          <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg><span><b>Si el primer día no le gusta,</b> te devolvemos la semana</span></li>
         </ul>
-        <p class="plan-lleva">Lleva: ropa de deporte, agua, su merienda y una muda.</p>
+        <p class="plan-lleva"><b>Lleva:</b> ropa de deporte, agua, su merienda y una muda.</p>
       </div>
       <div class="card plan">
         <span class="badge">Para el que se queda con ganas</span>
         <h3>Plan completo</h3>
         <p class="plan-time">De lunes a viernes, de 8:45 a 4:00</p>
         <p class="plan-price"><b>$240</b><span>por semana</span></p>
+        <p class="plan-stat is-full"><b>35</b><span><strong>retos por semana</strong>20 en las mañanas <em>+15 en las tardes</em></span></p>
         <p class="plan-g">La mañana</p>
         <ul>
-          <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg>Llega a las 8:45 y calienta con su grupo</li>
-          <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg>Cuatro retos, uno en cada estación: Jump Kids (parkour) dos veces y nunca seguidas, Fly Kids (telas) con Calistenia Kids, y Power Kids (juegos dirigidos)</li>
-          <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg>Merienda a media mañana</li>
-          <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg>Estiramiento a la 1:00</li>
+          <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg><span><b>Llega a las 8:45</b> y calienta con su grupo</span></li>
+          <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg><span><b>Cuatro retos, uno en cada estación:</b> Jump Kids (parkour) dos veces y nunca seguidas, Fly Kids (telas) con Calistenia Kids, y Power Kids (juegos dirigidos)</span></li>
+          <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg><span><b>Merienda</b> a media mañana</span></li>
+          <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg><span><b>Estiramiento</b> a la 1:00</span></li>
         </ul>
         <p class="plan-g">La tarde</p>
         <ul>
-          <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg>Almuerza a la 1:15</li>
-          <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg>De 1:45 a 3:45 sigue avanzando en parkour, Calistenia Kids y telas</li>
-          <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg>Estiramiento a las 3:45, y sale a las 4:00</li>
+          <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg><span><b>Almuerza</b> a la 1:15</span></li>
+          <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg><span><b>Tres retos más, de 1:45 a 3:45:</b> parkour, Calistenia Kids y telas</span></li>
+          <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg><span><b>Estiramiento a las 3:45,</b> y sale a las 4:00</span></li>
         </ul>
         <p class="plan-g">Toda la semana</p>
         <ul>
-          <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg>20 retos en las mañanas, 10 de ellos de parkour, más 5 tardes de práctica</li>
-          <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg>Su grupo, con niños de su edad</li>
-          <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg>Profesores de parkour y de telas</li>
-          <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg>Recibes sus fotos durante la semana</li>
-          <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg>Si el primer día no le gusta, te devolvemos la semana</li>
+          <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg><span><b>35 retos:</b> 20 en las mañanas, 10 de ellos de parkour, y 15 más en las tardes</span></li>
+          <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg><span><b>Su grupo,</b> con niños de su edad</span></li>
+          <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg><span><b>Profesores</b> de parkour y de telas</span></li>
+          <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg><span><b>Recibes sus fotos</b> durante la semana</span></li>
+          <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg><span><b>Si el primer día no le gusta,</b> te devolvemos la semana</span></li>
         </ul>
-        <p class="plan-lleva">Lleva: ropa de deporte, agua, su merienda, su almuerzo y una muda.</p>
+        <p class="plan-lleva"><b>Lleva:</b> ropa de deporte, agua, su merienda, su almuerzo y una muda.</p>
       </div>
     </div>
   </div>
