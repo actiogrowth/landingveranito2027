@@ -999,6 +999,11 @@ html, body { overflow-x: hidden; }
 @media (max-width: 374px) { #vea-lp .plan-retos { gap: 12px 10px; } #vea-lp .pr-grid i, #vea-lp .pr-leg i { width: 10px; height: 10px; } #vea-lp .pr-grid { gap: 3px; } #vea-lp .pr-col { gap: 3px; } #vea-lp .pr-num b { font-size: 46px; } #vea-lp .pr-num { gap: 8px; font-size: 14px; } }
 /* Franja de arriba: sin el punto que titilaba (decía "en vivo" sin serlo); la frase de escasez resaltada en celeste */
 #vea-lp .banner strong { font-weight: 800; color: #FFFFFF; text-decoration: underline; text-decoration-color: #AED7EB; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+/* Planes: las estaciones como viñetas debajo de "Cuatro retos" */
+#vea-lp #planes .plan .plan-sub { display: grid; gap: 4px; margin-top: 6px; padding: 0; list-style: none; }
+#vea-lp #planes .plan .plan-sub li { position: relative; display: block; padding-left: 16px; font-size: 14.5px; line-height: 1.45; color: #444B57; }
+#vea-lp #planes .plan .plan-sub li::before { content: ''; position: absolute; left: 2px; top: 8px; width: 6px; height: 6px; border-radius: 2px; background: #1974A8; }
+#vea-lp #planes .plan .plan-sub li b { font-weight: 700; color: #14161A; }
 /* Notas con checks (grupos y día): letra negra y más gruesa, check en círculo azul de la marca */
 #vea-lp .note.checks { gap: 14px; padding: 18px 20px; }
 #vea-lp .note.checks li { align-items: flex-start; gap: 12px; font-size: 16px; font-weight: 600; line-height: 1.4; color: #14161A; }
@@ -1287,7 +1292,7 @@ html, body { overflow-x: hidden; }
         <p class="plan-g">La mañana</p>
         <ul>
           <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg><span><b>Llega a las 8:45</b> y calienta con su grupo</span></li>
-          <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg><span><b>Cuatro retos, uno en cada estación:</b> Jump Kids (parkour) dos veces y nunca seguidas, Fly Kids (telas) con Calistenia Kids, y Power Kids (juegos dirigidos)</span></li>
+          <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg><span><b>Cuatro retos, uno en cada estación:</b><ul class="plan-sub"><li><b>Jump Kids</b> (parkour), dos veces y nunca seguidas</li><li><b>Fly Kids</b> (telas) con Calistenia Kids</li><li><b>Power Kids</b> (juegos dirigidos)</li></ul></span></li>
           <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg><span><b>Merienda</b> a media mañana</span></li>
           <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg><span><b>Estiramiento final a la 1:00,</b> y sale a la 1:15</span></li>
         </ul>
@@ -1310,7 +1315,7 @@ html, body { overflow-x: hidden; }
         <p class="plan-g">La mañana</p>
         <ul>
           <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg><span><b>Llega a las 8:45</b> y calienta con su grupo</span></li>
-          <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg><span><b>Cuatro retos, uno en cada estación:</b> Jump Kids (parkour) dos veces y nunca seguidas, Fly Kids (telas) con Calistenia Kids, y Power Kids (juegos dirigidos)</span></li>
+          <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg><span><b>Cuatro retos, uno en cada estación:</b><ul class="plan-sub"><li><b>Jump Kids</b> (parkour), dos veces y nunca seguidas</li><li><b>Fly Kids</b> (telas) con Calistenia Kids</li><li><b>Power Kids</b> (juegos dirigidos)</li></ul></span></li>
           <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg><span><b>Merienda</b> a media mañana</span></li>
           <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg><span><b>Estiramiento</b> a la 1:00</span></li>
         </ul>
