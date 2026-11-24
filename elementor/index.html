@@ -953,6 +953,14 @@ html, body { overflow-x: hidden; }
 #vea-lp .kicker::after { background: #1974A8; border-radius: 50%; }
 #vea-lp .t-dark .kicker::after, #vea-lp .t-azul .kicker::after { background: #AED7EB; }
 /* Familias: "le encantó" en su propia línea, más grande y resaltado */
+/* ¿Es para mi hijo?: cada punto abre con su idea en negrita negra y la explicación sigue en gris; puntos separados por una línea fina */
+#vea-lp #para-quien .fit ul { gap: 0; }
+#vea-lp #para-quien .fit li { padding: 12px 0 12px 18px; font-size: 15px; line-height: 1.5; border-top: 1px solid #E3E6EA; }
+#vea-lp #para-quien .fit li:first-child { border-top: 0; padding-top: 2px; }
+#vea-lp #para-quien .fit li:last-child { padding-bottom: 2px; }
+#vea-lp #para-quien .fit li::before { top: 21px; }
+#vea-lp #para-quien .fit li:first-child::before { top: 11px; }
+#vea-lp #para-quien .fit li b { font-weight: 700; color: #14161A; }
 /* Notas con checks (grupos y día): letra negra y más gruesa, check en círculo azul de la marca */
 #vea-lp .note.checks { gap: 14px; padding: 18px 20px; }
 #vea-lp .note.checks li { align-items: flex-start; gap: 12px; font-size: 16px; font-weight: 600; line-height: 1.4; color: #14161A; }
@@ -1200,25 +1208,25 @@ html, body { overflow-x: hidden; }
       <div class="card fit rv">
         <h3><span class="tile"><svg width="22" height="22" aria-hidden="true"><use href="#vi-check"/></svg></span>Es ideal para</h3>
         <ul>
-          <li>El que no se queda quieto. Unos padres nos lo dijeron así: "mi hijo es un panel solar, necesita quemar energía jajaja"</li>
-          <li>El que en vacaciones termina toda la mañana con la tablet</li>
-          <li>El que va por primera vez a un campamento: va con niños de su edad</li>
-          <li>Hermanos de 4 a 11 años: cada uno con su grupo</li>
+          <li><b>El que no se queda quieto.</b> Unos padres nos lo dijeron así: "mi hijo es un panel solar, necesita quemar energía jajaja"</li>
+          <li><b>El que en vacaciones termina toda la mañana con la tablet</b></li>
+          <li><b>El que va por primera vez a un campamento:</b> va con niños de su edad</li>
         </ul>
       </div>
       <div class="card fit rv">
         <h3><span class="tile"><svg width="22" height="22" aria-hidden="true"><use href="#vi-check"/></svg></span>También funciona para</h3>
         <ul>
-          <li>Niños que "no son de deportes": todo lo hace a su nivel</li>
-          <li>El que algo le da miedo al principio: avanza a su ritmo, con un profe cerca</li>
+          <li><b>Niños que "no son de deportes":</b> todo lo hace a su nivel</li>
+          <li><b>El que algo le da miedo al principio:</b> avanza a su ritmo, con un profe cerca</li>
+          <li><b>Hermanos de 4 a 11 años:</b> cada uno con su grupo</li>
         </ul>
       </div>
       <div class="card fit rv">
         <h3><span class="tile"><svg width="22" height="22" aria-hidden="true"><use href="#vi-wa"/></svg></span>Hablemos primero</h3>
         <ul>
-          <li>Niños menores de 4 o mayores de 11</li>
-          <li>Si buscas manualidades, arte, agua o paseos: aquí no hay</li>
-          <li>Si necesitas quedarte con él: los padres no entran al área de actividades. El primer día puedes esperar en el lobby</li>
+          <li><b>Niños menores de 4 o mayores de 11</b></li>
+          <li><b>Si buscas manualidades, arte, agua o paseos:</b> aquí no hay</li>
+          <li><b>Si necesitas quedarte con él:</b> los padres no entran al área de actividades. El primer día puedes esperar en el lobby</li>
         </ul>
       </div>
     </div>
