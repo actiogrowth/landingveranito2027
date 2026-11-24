@@ -981,6 +981,19 @@ html, body { overflow-x: hidden; }
 #vea-lp .btn.mid { width: 100%; max-width: 480px; }
 @media (max-width: 374px) { #vea-lp .hero-actions .btn, #vea-lp .btn.mid, #vea-lp .final .btn { min-height: 72px; } }
 #vea-lp .vea-bar button { min-height: 48px; }
+/* Retos de cada plan dibujados: la semana (L a V) con un cuadrito por reto; azul = mañana, celeste = tarde */
+#vea-lp .plan-retos { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--card-line); }
+#vea-lp .pr-txt { display: grid; gap: 10px; }
+#vea-lp .pr-num { display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 800; line-height: 1.15; color: #14161A; }
+#vea-lp .pr-num b { font-family: var(--disp); font-size: 48px; font-weight: 800; line-height: .85; color: #1974A8; font-variant-numeric: tabular-nums; }
+#vea-lp .pr-leg { display: grid; gap: 4px; font-size: 13.5px; font-weight: 600; color: #444B57; }
+#vea-lp .pr-leg span { display: flex; align-items: center; gap: 7px; white-space: nowrap; }
+#vea-lp .pr-grid { display: flex; gap: 5px; flex-shrink: 0; }
+#vea-lp .pr-col { display: grid; gap: 4px; justify-items: center; }
+#vea-lp .pr-d { font-size: 12px; font-weight: 700; line-height: 1; color: #444B57; margin-bottom: 2px; }
+#vea-lp .pr-grid i, #vea-lp .pr-leg i { display: block; width: 13px; height: 13px; border-radius: 3px; background: #1974A8; }
+#vea-lp .pr-grid i.t, #vea-lp .pr-leg i.t { background: #AED7EB; box-shadow: inset 0 0 0 1.5px #1974A8; }
+@media (max-width: 359px) { #vea-lp .pr-grid i, #vea-lp .pr-leg i { width: 11px; height: 11px; } #vea-lp .pr-grid { gap: 4px; } #vea-lp .pr-num b { font-size: 42px; } }
 /* Notas con checks (grupos y día): letra negra y más gruesa, check en círculo azul de la marca */
 #vea-lp .note.checks { gap: 14px; padding: 18px 20px; }
 #vea-lp .note.checks li { align-items: flex-start; gap: 12px; font-size: 16px; font-weight: 600; line-height: 1.4; color: #14161A; }
@@ -1265,7 +1278,7 @@ html, body { overflow-x: hidden; }
         <h3>Plan mañana</h3>
         <p class="plan-time">De lunes a viernes, de 8:45 a 1:15</p>
         <p class="plan-price"><b>$185</b><span>por semana</span></p>
-        <p class="plan-stat"><span class="ps-top"><b>20</b>retos por semana</span><span class="ps-sub">4 cada mañana</span></p>
+        <div class="plan-retos" role="img" aria-label="20 retos por semana: 4 cada mañana, de lunes a viernes"><span class="pr-txt"><span class="pr-num"><b>20</b>retos<br>por semana</span><span class="pr-leg"><span><i></i>4 cada mañana</span></span></span><span class="pr-grid" aria-hidden="true"><span class="pr-col"><span class="pr-d">L</span><i></i><i></i><i></i><i></i></span><span class="pr-col"><span class="pr-d">M</span><i></i><i></i><i></i><i></i></span><span class="pr-col"><span class="pr-d">M</span><i></i><i></i><i></i><i></i></span><span class="pr-col"><span class="pr-d">J</span><i></i><i></i><i></i><i></i></span><span class="pr-col"><span class="pr-d">V</span><i></i><i></i><i></i><i></i></span></span></div>
         <p class="plan-g">La mañana</p>
         <ul>
           <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg><span><b>Llega a las 8:45</b> y calienta con su grupo</span></li>
@@ -1288,7 +1301,7 @@ html, body { overflow-x: hidden; }
         <h3>Plan completo</h3>
         <p class="plan-time">De lunes a viernes, de 8:45 a 4:00</p>
         <p class="plan-price"><b>$240</b><span>por semana</span></p>
-        <p class="plan-stat"><span class="ps-top"><b>35</b>retos por semana</span><span class="ps-sub">20 en las mañanas <em>+15 en las tardes</em></span></p>
+        <div class="plan-retos" role="img" aria-label="35 retos por semana: 4 cada mañana y 3 cada tarde, de lunes a viernes"><span class="pr-txt"><span class="pr-num"><b>35</b>retos<br>por semana</span><span class="pr-leg"><span><i></i>20 en las mañanas</span><span><i class="t"></i>15 en las tardes</span></span></span><span class="pr-grid" aria-hidden="true"><span class="pr-col"><span class="pr-d">L</span><i></i><i></i><i></i><i></i><i class="t"></i><i class="t"></i><i class="t"></i></span><span class="pr-col"><span class="pr-d">M</span><i></i><i></i><i></i><i></i><i class="t"></i><i class="t"></i><i class="t"></i></span><span class="pr-col"><span class="pr-d">M</span><i></i><i></i><i></i><i></i><i class="t"></i><i class="t"></i><i class="t"></i></span><span class="pr-col"><span class="pr-d">J</span><i></i><i></i><i></i><i></i><i class="t"></i><i class="t"></i><i class="t"></i></span><span class="pr-col"><span class="pr-d">V</span><i></i><i></i><i></i><i></i><i class="t"></i><i class="t"></i><i class="t"></i></span></span></div>
         <p class="plan-g">La mañana</p>
         <ul>
           <li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg><span><b>Llega a las 8:45</b> y calienta con su grupo</span></li>
