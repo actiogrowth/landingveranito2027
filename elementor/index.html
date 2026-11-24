@@ -976,6 +976,11 @@ html, body { overflow-x: hidden; }
 #vea-lp #planes .plan-lleva { margin-top: auto; font-weight: 500; color: #444B57; }
 #vea-lp #planes .plan-lleva b { font-weight: 800; color: #14161A; }
 #vea-lp #planes .plan ul:last-of-type { margin-bottom: 24px; }
+/* Botones que llevan a la compra: todos del mismo alto (64 px) y la misma letra; el de la barra de abajo, 48 px */
+#vea-lp .hero-actions .btn, #vea-lp .btn.mid, #vea-lp .final .btn { min-height: 64px; padding-top: 14px; padding-bottom: 14px; font-size: 16px; line-height: 1.25; }
+#vea-lp .btn.mid { width: 100%; max-width: 480px; }
+@media (max-width: 374px) { #vea-lp .hero-actions .btn, #vea-lp .btn.mid, #vea-lp .final .btn { min-height: 72px; } }
+#vea-lp .vea-bar button { min-height: 48px; }
 /* Notas con checks (grupos y día): letra negra y más gruesa, check en círculo azul de la marca */
 #vea-lp .note.checks { gap: 14px; padding: 18px 20px; }
 #vea-lp .note.checks li { align-items: flex-start; gap: 12px; font-size: 16px; font-weight: 600; line-height: 1.4; color: #14161A; }
