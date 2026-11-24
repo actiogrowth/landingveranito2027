@@ -911,9 +911,14 @@ html, body { overflow-x: hidden; }
 #vea-lp .day-blk h3 { display: grid; gap: 10px; padding-bottom: 14px; border-bottom: 2px solid #14161A; color: #14161A; }
 #vea-lp .day-tag { justify-self: start; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; line-height: 1.3; padding: 4px 10px; border-radius: 999px; background: #AED7EB; color: #14161A; }
 #vea-lp .day-tag.is-pm { background: #1974A8; color: #FFFFFF; }
-#vea-lp .day-ttl { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; font-size: 22px; font-weight: 800; letter-spacing: -.01em; line-height: 1.15; }
-#vea-lp .day-ttl small { font-size: 15px; font-weight: 700; color: #444B57; white-space: nowrap; font-variant-numeric: tabular-nums; }
+#vea-lp .day-ttl { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; font-family: var(--disp); font-size: 32px; font-weight: 800; text-transform: uppercase; letter-spacing: .005em; line-height: 1; }
+#vea-lp .day-ttl small { font-family: var(--font); text-transform: none; font-size: 16px; font-weight: 700; letter-spacing: 0; color: #444B57; white-space: nowrap; font-variant-numeric: tabular-nums; }
 #vea-lp .day-blk .timeline { padding: 0; }
+/* Sin huecos: el cuadro es una columna y sus filas se reparten el alto disponible, centradas */
+#vea-lp .day-blk { display: flex; flex-direction: column; }
+#vea-lp .day-blk .timeline { flex: 1; display: flex; flex-direction: column; }
+#vea-lp .day-blk .timeline li { flex: 1 1 auto; align-content: center; }
+@media (max-width: 359px) { #vea-lp .day-blk { padding-inline: 20px; } #vea-lp .day-ttl { font-size: 28px; } #vea-lp .day-ttl small { font-size: 15px; } }
 /* Orden único en todas las pantallas: edad → mañana | tarde → nota → fotos.
    En computadora mañana y tarde van lado a lado con la misma altura; lo demás ocupa el ancho completo. */
 #vea-lp .day { gap: 16px; }
