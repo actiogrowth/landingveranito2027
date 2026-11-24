@@ -918,7 +918,11 @@ html, body { overflow-x: hidden; }
 #vea-lp .day-blk { display: flex; flex-direction: column; }
 #vea-lp .day-blk .timeline { flex: 1; display: flex; flex-direction: column; }
 #vea-lp .day-blk .timeline li { flex: 1 1 auto; align-content: center; }
-@media (max-width: 359px) { #vea-lp .day-blk { padding-inline: 20px; } #vea-lp .day-ttl { font-size: 28px; } #vea-lp .day-ttl small { font-size: 15px; } }
+/* Horario de cada cuadro: pastilla con reloj, letra negra y gruesa; nunca se parte (si no cabe, baja entera) */
+#vea-lp .day-ttl { flex-wrap: wrap; align-items: center; row-gap: 10px; }
+#vea-lp .day-hora { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px 6px 9px; border-radius: 999px; background: #EEF1F4; border: 1.5px solid #14161A; font-family: var(--font); text-transform: none; font-size: 16px; font-weight: 700; letter-spacing: 0; line-height: 1; color: #14161A; white-space: nowrap; font-variant-numeric: tabular-nums; }
+#vea-lp .day-hora svg { flex-shrink: 0; color: #1974A8; }
+@media (max-width: 374px) { #vea-lp .day-blk { padding-inline: 20px; } #vea-lp .day-ttl { flex-direction: column; align-items: flex-start; font-size: 30px; } #vea-lp .day-hora { font-size: 15px; } }
 /* Orden único en todas las pantallas: edad → mañana | tarde → nota → fotos.
    En computadora mañana y tarde van lado a lado con la misma altura; lo demás ocupa el ancho completo. */
 #vea-lp .day { gap: 16px; }
@@ -1119,7 +1123,7 @@ html, body { overflow-x: hidden; }
     <div class="day">
         <p class="day-pick" id="day-pick">Elige su edad arriba y aquí ves su día, reto por reto.<a href="#grupos">Elegir edad</a></p>
         <div class="card day-blk day-am">
-          <h3><span class="day-tag">Plan mañana y plan completo</span><span class="day-ttl">La mañana <small>8:45 a 1:15</small></span></h3>
+          <h3><span class="day-tag">Plan mañana y plan completo</span><span class="day-ttl">La mañana <span class="day-hora"><svg width="16" height="16" aria-hidden="true"><use href="#vi-clock"/></svg>8:45 a 1:15</span></span></h3>
         <ol class="timeline" id="day-tl">
           <li><time>8:45</time><div><b>Llega y calienta con su grupo</b></div></li>
           <li><time>9:00</time><div class="tl-rot" data-rot="0"><b>Reto 1</b></div></li>
@@ -1132,7 +1136,7 @@ html, body { overflow-x: hidden; }
         </ol>
         </div>
         <div class="card day-blk day-pm">
-          <h3><span class="day-tag is-pm">Solo plan completo</span><span class="day-ttl">La tarde <small>1:15 a 4:00</small></span></h3>
+          <h3><span class="day-tag is-pm">Solo plan completo</span><span class="day-ttl">La tarde <span class="day-hora"><svg width="16" height="16" aria-hidden="true"><use href="#vi-clock"/></svg>1:15 a 4:00</span></span></h3>
           <ol class="timeline">
             <li><time>1:15</time><div><b>Almuerza</b><small>El que trae de casa</small></div></li>
             <li><time>1:45</time><div><b>Rotación 1</b><small>Parkour, Calistenia Kids o telas</small></div></li>
