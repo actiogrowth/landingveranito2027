@@ -982,10 +982,12 @@ html, body { overflow-x: hidden; }
 @media (max-width: 374px) { #vea-lp .hero-actions .btn, #vea-lp .btn.mid, #vea-lp .final .btn { min-height: 72px; } }
 #vea-lp .vea-bar button { min-height: 48px; }
 /* Retos de cada plan dibujados: la semana (L a V) con un cuadrito por reto; azul = mañana, celeste = tarde */
-#vea-lp .plan-retos { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 14px 16px; margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--card-line); }
+#vea-lp .plan-retos { display: grid; grid-template-columns: 1fr auto; grid-template-rows: auto 1fr; align-items: start; gap: 14px 16px; margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--card-line); }
 #vea-lp .pr-num { display: flex; align-items: center; gap: 12px; font-size: 17px; font-weight: 800; line-height: 1.15; color: #14161A; white-space: nowrap; }
 #vea-lp .pr-num b { font-family: var(--disp); font-size: 64px; font-weight: 800; line-height: .82; color: #1974A8; font-variant-numeric: tabular-nums; }
-#vea-lp .pr-leg { grid-column: 1 / -1; display: grid; justify-items: start; gap: 8px; font-size: 14.5px; font-weight: 600; color: #444B57; }
+#vea-lp .pr-num { grid-column: 1; grid-row: 1; padding-top: 14px; }
+#vea-lp .pr-grid { grid-column: 2; grid-row: 1 / 3; }
+#vea-lp .pr-leg { grid-column: 1; grid-row: 2; display: grid; justify-items: start; gap: 8px; font-size: 14.5px; font-weight: 600; color: #444B57; }
 #vea-lp .pr-cols { display: flex; flex-wrap: wrap; gap: 4px 16px; }
 #vea-lp .pr-cols span { display: inline-flex; align-items: center; gap: 7px; white-space: nowrap; }
 #vea-lp .pr-leg .pr-pk { font-weight: 800; color: #14161A; padding: 1px 8px; border-radius: 999px; background: #EEF1F4; }
