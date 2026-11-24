@@ -906,21 +906,25 @@ html, body { overflow-x: hidden; }
 /* Un día en Veranito: la barra de la edad se lee (negro y más peso) y la tarde va en su propio cuadro, igual al de la mañana */
 #vea-lp .day-pick { font-size: 16px; font-weight: 700; line-height: 1.4; color: #14161A; }
 #vea-lp .day-pick a { font-size: 15px; font-weight: 700; color: #14161A; text-decoration: underline; text-underline-offset: 3px; }
-#vea-lp .day-pm { margin-top: var(--sp-item); padding: 20px 24px 8px; }
-#vea-lp .day-pm h3 { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; padding-bottom: 12px; border-bottom: 2px solid #14161A; font-size: 19px; font-weight: 800; letter-spacing: -.01em; line-height: 1.2; color: #14161A; }
-#vea-lp .day-pm-tag { font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; line-height: 1.3; padding: 4px 10px; border-radius: 999px; background: #1974A8; color: #FFFFFF; }
-#vea-lp .day-pm .timeline { padding: 0; }
-/* Computadora: izquierda = edad, mañana y nota; derecha = tarde y fotos. Celular: edad, mañana, tarde, fotos y nota, en ese orden. */
-#vea-lp .day .gallery { margin-top: 16px; }
-#vea-lp .day .day-pm { margin-top: 0; }
-@media (max-width: 979px) {
-  #vea-lp .day { gap: 16px; }
-  #vea-lp .day > div { display: contents; }
-  #vea-lp .day .day-pick { order: 1; margin-bottom: 0; }
-  #vea-lp .day #day-tl { order: 2; }
-  #vea-lp .day .day-pm { order: 3; }
-  #vea-lp .day .gallery { order: 4; margin-top: 8px; }
-  #vea-lp .day .note { order: 5; margin-top: 8px; }
+/* Un día: dos cuadros iguales (mañana y tarde), cada uno con etiqueta de a qué plan aplica, título y horario */
+#vea-lp .day-blk { padding: 20px 24px 8px; }
+#vea-lp .day-blk h3 { display: grid; gap: 10px; padding-bottom: 14px; border-bottom: 2px solid #14161A; color: #14161A; }
+#vea-lp .day-tag { justify-self: start; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; line-height: 1.3; padding: 4px 10px; border-radius: 999px; background: #AED7EB; color: #14161A; }
+#vea-lp .day-tag.is-pm { background: #1974A8; color: #FFFFFF; }
+#vea-lp .day-ttl { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; font-size: 22px; font-weight: 800; letter-spacing: -.01em; line-height: 1.15; }
+#vea-lp .day-ttl small { font-size: 15px; font-weight: 700; color: #444B57; white-space: nowrap; font-variant-numeric: tabular-nums; }
+#vea-lp .day-blk .timeline { padding: 0; }
+/* Orden único en todas las pantallas: edad → mañana | tarde → nota → fotos.
+   En computadora mañana y tarde van lado a lado con la misma altura; lo demás ocupa el ancho completo. */
+#vea-lp .day { gap: 16px; }
+#vea-lp .day .day-pick { margin-bottom: 0; }
+#vea-lp .day .note { margin-top: 8px; }
+#vea-lp .day .gallery { margin-top: 8px; }
+@media (min-width: 980px) {
+  #vea-lp .day { grid-template-columns: 1fr 1fr; gap: 24px 32px; align-items: stretch; }
+  #vea-lp .day .day-pick, #vea-lp .day .note, #vea-lp .day .gallery { grid-column: 1 / -1; }
+  #vea-lp .day .day-pick { max-width: 620px; margin-inline: auto; width: 100%; }
+  #vea-lp .day .gallery { grid-template-columns: repeat(4, 1fr); }
 }
 @media (max-width: 359px) { #vea-lp .vea-bar { gap: 10px; } #vea-lp .vea-bar button { padding: 8px 12px; } #vea-lp .vea-bar button svg { display: none; } }
 @media (max-width: 759px) { #vea-lp .final h2 { font-size: min(40px, calc((100vw - 40px) / 7.5)); } #vea-lp .final h2 em { white-space: nowrap; } }
@@ -1108,9 +1112,10 @@ html, body { overflow-x: hidden; }
       <h2 id="day-h">Así es un día, de la hora en que llega a la hora en que sale.</h2>
     </div>
     <div class="day">
-      <div>
         <p class="day-pick" id="day-pick">Elige su edad arriba y aquí ves su día, reto por reto.<a href="#grupos">Elegir edad</a></p>
-        <ol class="card timeline" id="day-tl">
+        <div class="card day-blk day-am">
+          <h3><span class="day-tag">Plan mañana y plan completo</span><span class="day-ttl">La mañana <small>8:45 a 1:15</small></span></h3>
+        <ol class="timeline" id="day-tl">
           <li><time>8:45</time><div><b>Llega y calienta con su grupo</b></div></li>
           <li><time>9:00</time><div class="tl-rot" data-rot="0"><b>Reto 1</b></div></li>
           <li><time>9:55</time><div class="tl-rot" data-rot="1"><b>Reto 2</b></div></li>
@@ -1118,13 +1123,11 @@ html, body { overflow-x: hidden; }
           <li><time>11:10</time><div class="tl-rot" data-rot="2"><b>Reto 3</b></div></li>
           <li><time>12:05</time><div class="tl-rot" data-rot="3"><b>Reto 4</b></div></li>
           <li><time>1:00</time><div><b>Estiramiento final</b></div></li>
-          <li><time>1:15</time><div><b>Sale</b><small>Plan mañana</small></div></li>
+          <li><time>1:15</time><div><b>Sale</b><small>Plan mañana. El completo sigue en la tarde</small></div></li>
         </ol>
-        <ul class="note checks"><li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg>En cada reto cambia de estación.</li><li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg>Y tú, desde el trabajo, recibes sus fotos durante la semana.</li></ul>
-      </div>
-      <div>
-        <div class="card day-pm">
-          <h3><span class="day-pm-tag">Plan completo</span>Y sigue la tarde</h3>
+        </div>
+        <div class="card day-blk day-pm">
+          <h3><span class="day-tag is-pm">Solo plan completo</span><span class="day-ttl">La tarde <small>1:15 a 4:00</small></span></h3>
           <ol class="timeline">
             <li><time>1:15</time><div><b>Almuerza</b><small>El que trae de casa</small></div></li>
             <li><time>1:45</time><div><b>Rotación 1</b><small>Parkour, Calistenia Kids o telas</small></div></li>
@@ -1134,13 +1137,13 @@ html, body { overflow-x: hidden; }
             <li><time>4:00</time><div><b>Sale</b><small>Plan completo</small></div></li>
           </ol>
         </div>
+        <ul class="note checks"><li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg>En cada reto cambia de estación.</li><li><svg width="16" height="16" aria-hidden="true"><use href="#vi-check"/></svg>Y tú, desde el trabajo, recibes sus fotos durante la semana.</li></ul>
         <div class="gallery grid g2c">
           <img class="gal-sm rv" loading="lazy" decoding="async" src="https://files.leadconnectorhq.com/file/6b047d1bca280c4de3c71f1b/493315166-1785360932368259-4233881924652743828-n.jpg" alt="Un día en Veranito (1 de 4)">
           <img class="gal-sm rv" loading="lazy" decoding="async" src="https://files.leadconnectorhq.com/file/6b047d1bd45fc20d7751deed/493024126-1786090778961941-4208273583571197005-n.jpg" alt="Un día en Veranito (2 de 4)">
           <img class="gal-sm rv" loading="lazy" decoding="async" src="https://files.leadconnectorhq.com/file/6b047d1ce83b600a233f8472/488926562-1766964084207944-8902305119583286775-n.jpg" alt="Un día en Veranito (3 de 4)">
           <img class="gal-sm rv" loading="lazy" decoding="async" src="https://files.leadconnectorhq.com/file/6b047d1bca280c4de3c71f21/505871515-1824458488458503-8103663859100347217-n.jpg" alt="Un día en Veranito (4 de 4)">
         </div>
-      </div>
     </div>
     <p class="cta-mid"><a class="btn mid" href="#reservar">Quiero este día para mi hijo <svg width="20" height="20" aria-hidden="true"><use href="#vi-down"/></svg></a></p>
   </div>
@@ -1817,7 +1820,7 @@ html, body { overflow-x: hidden; }
   (function(){
     var sel=['.stats','.facts',
       '.band .head > *','.manifesto > *','.subhead','.band .grid > *','.groups > .group','.ages','.age-out',
-      '.day-pick','#day-tl','.day-full','.day-pm','.wide-photo','.note','.fine','.quote','.cta-mid',
+      '.day-pick','.day-am','.day-full','.day-pm','.wide-photo','.note','.fine','.quote','.cta-mid',
       '.faq','.final .wrap > *'];
     var seen=[];
     document.querySelectorAll(sel.join(',')).forEach(function(el){
