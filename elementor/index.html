@@ -949,6 +949,17 @@ html, body { overflow-x: hidden; }
 /* Regla de color (23 nov): naranja = lo que se toca (botones); celeste = lo que se resalta.
    Sobre fondo celeste el resaltado va en blanco para que se vea. */
 #vea-lp .hero h1 .mk::before, #vea-lp .hero h1 .mk2::before { background: #AED7EB; }
+/* Título principal en dos tamaños (24 nov): la explicación chica arriba y el resultado grande abajo */
+#vea-lp .hero h1 .h1-pre { display: block; font-size: max(18px, .46em); line-height: 1.18; letter-spacing: .01em; white-space: normal; text-wrap: balance; margin: 0 auto .5em; max-width: 24em; }
+#vea-lp .hero h1 .h1-pre-a { color: #4D5560; }
+#vea-lp .hero h1 .h1-pre-b { color: #14161A; white-space: nowrap; }
+#vea-lp .hero h1 .h1-pre .nw { white-space: nowrap; }
+@media (max-width: 359px) { #vea-lp .hero h1 .h1-pre-b { display: block; } }
+#vea-lp .hero h1 .h1-big { display: block; }
+@media (max-width: 759px) { #vea-lp .hero h1 .h1-big { font-size: calc((100vw - 40px) / 8.3); } }
+@media (min-width: 760px) { #vea-lp .hero h1 .h1-big { font-size: min(calc((100vw - 40px) / 17.5), 64px); } #vea-lp .hero h1 .h1-pre { font-size: min(.4em, 26px); } }
+#vea-lp .hero h1 .mk.draw::before { animation-delay: .2s; }
+
 #vea-lp .manifesto blockquote span { background: linear-gradient(transparent 64%, #FFFFFF 64%); }
 #vea-lp .study .manifesto-end span { background: linear-gradient(transparent 64%, #AED7EB 64%); }
 /* Franja de cupos en el azul de la marca, igual que el cierre: la página abre y cierra en azul */
@@ -1057,7 +1068,7 @@ html, body { overflow-x: hidden; }
 
 <header class="hero t-white" id="inicio">
   <div class="wrap">
-    <h1 class="rv" data-hold>Cualquier veranito<br class="bm"> puede tener<br class="bd"> a tu hijo<br class="bm"> entretenido.<br> <em><span class="t3"><span class="mk2">El Veranito VEA</span> está</span><br class="bm"> <span class="t4">diseñado<br class="bd"> para retarlo</span><br class="bm"> y <span class="mk">le va a encantar.<svg class="mk-line" viewBox="0 0 300 16" preserveAspectRatio="none" aria-hidden="true"><path d="M4 11 C 60 5, 150 3, 296 8" pathLength="100"/></svg></span></em></h1>
+    <h1 class="rv" data-hold><span class="h1-pre"><span class="h1-pre-a">Cualquier veranito puede entretener <span class="nw">a tu hijo.</span></span> <span class="h1-pre-b">El Veranito VEA lo reta.</span></span><span class="h1-big">Le va a encantar<br class="bm"> descubrir<br class="bd"> lo que es<br class="bm"> <span class="mk">capaz de lograr.<svg class="mk-line" viewBox="0 0 300 16" preserveAspectRatio="none" aria-hidden="true"><path d="M4 11 C 60 5, 150 3, 296 8" pathLength="100"/></svg></span></span></h1>
     <p class="hero-sub rv" data-hold><b>Más de 1.500 niños han pasado por aquí.</b> En este video ves un día completo, y por qué casi todos piden volver.</p>
     <div class="video rv" data-hold id="vsl" role="img" aria-label="Video de la directora Ana mostrando un día completo de Veranito">
       <img src="https://files.leadconnectorhq.com/file/6b03274d2c68ebcf468a24b7/miniatura-video.jpg" alt="" width="1280" height="960">
@@ -1946,7 +1957,7 @@ html, body { overflow-x: hidden; }
       if(phone){ window.addEventListener('scroll',onScroll,{passive:true}); onScroll(); setTimeout(release,3000); }
       else { release(); }
       setTimeout(function(){
-        new IntersectionObserver(function(en){ var on=en[0].isIntersecting; mk.classList.toggle('draw',on); document.querySelector('.hero h1 .mk2').classList.toggle('draw',on); },{threshold:0.9}).observe(mk);
+        new IntersectionObserver(function(en){ var on=en[0].isIntersecting; mk.classList.toggle('draw',on); },{threshold:0.9}).observe(mk);
       },(n-1)*380+1500);
     };
     var armed=false;
@@ -1960,7 +1971,6 @@ html, body { overflow-x: hidden; }
     document.querySelectorAll('.rv').forEach(function(el){ el.classList.add('in'); });
     document.querySelectorAll('.rv[data-hold]').forEach(function(el){ el.classList.add('in'); });
     document.querySelector('.hero h1 .mk').classList.add('draw');
-    document.querySelector('.hero h1 .mk2').classList.add('draw');
     vis.hero=false;
     updateBar();
   }
