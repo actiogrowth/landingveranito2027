@@ -925,7 +925,22 @@ html, body { overflow-x: hidden; }
 @media (max-width: 359px) { #vea-lp .vea-bar { gap: 10px; } #vea-lp .vea-bar button { padding: 8px 12px; } #vea-lp .vea-bar button svg { display: none; } }
 @media (max-width: 759px) { #vea-lp .final h2 { font-size: min(40px, calc((100vw - 40px) / 7.5)); } #vea-lp .final h2 em { white-space: nowrap; } }
 /* Resaltado del cierre como franja, igual que en el título de arriba (no un bloque de toda la altura) */
-#vea-lp .final h2 em { background: linear-gradient(transparent .14em, #FFA615 .14em, #FFA615 calc(100% - .12em), transparent calc(100% - .12em)); color: #14161A; padding: 0 .16em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+#vea-lp .final h2 em { background: linear-gradient(transparent .14em, #AED7EB .14em, #AED7EB calc(100% - .12em), transparent calc(100% - .12em)); color: #14161A; padding: 0 .16em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+/* Regla de color (23 nov): naranja = lo que se toca (botones); celeste = lo que se resalta.
+   Sobre fondo celeste el resaltado va en blanco para que se vea. */
+#vea-lp .hero h1 .mk::before, #vea-lp .hero h1 .mk2::before { background: #AED7EB; }
+#vea-lp .manifesto blockquote span { background: linear-gradient(transparent 64%, #FFFFFF 64%); }
+#vea-lp .study .manifesto-end span { background: linear-gradient(transparent 64%, #AED7EB 64%); }
+/* Franja de cupos en el azul de la marca, igual que el cierre: la página abre y cierra en azul */
+#vea-lp .banner { background: #1974A8; color: #FFFFFF; }
+#vea-lp .banner .dot, #vea-lp .banner .dot::after { background: #FFFFFF; }
+/* Puntitos de las etiquetas: figuras del logo (cuadrito rojo a la izquierda, círculo azul a la derecha) */
+#vea-lp .kicker::before, #vea-lp .kicker::after { width: 10px; height: 10px; }
+#vea-lp .kicker::before { background: #D71C0E; }
+#vea-lp .kicker::after { background: #1974A8; border-radius: 50%; }
+#vea-lp .t-dark .kicker::after, #vea-lp .t-azul .kicker::after { background: #AED7EB; }
+/* Familias: "le encantó" en su propia línea, más grande y resaltado */
+#vea-lp #familias h2 .h2-big { display: block; width: fit-content; max-width: 100%; white-space: nowrap; margin: .14em auto 0; font-size: min(1.4em, calc((100vw - 40px) / 5.9)); font-style: normal; line-height: 1.05; padding: 0 .14em; background: linear-gradient(transparent .1em, #AED7EB .1em, #AED7EB calc(100% - .06em), transparent calc(100% - .06em)); }
 </style>
 <div id="vea-lp">
 
@@ -1144,7 +1159,7 @@ html, body { overflow-x: hidden; }
   <div class="wrap">
     <div class="head">
       <span class="kicker">Lo que dicen las familias</span>
-      <h2>Más de 1.500 niños. Lo que más nos escriben los padres son dos palabras: "le encantó".</h2>
+      <h2>Más de 1.500 niños. Lo que más nos escriben los padres son dos palabras: <em class="h2-big">"le encantó".</em></h2>
     </div>
     <div class="clips grid g3c">
       <img loading="lazy" decoding="async" src="https://files.leadconnectorhq.com/file/6b03274ed50d9db796786c74/whatsapp-image-2026-05-07-at-12-15-41-pm-1.jpeg" alt="Familias en el Veranito VEA (1 de 3)">
